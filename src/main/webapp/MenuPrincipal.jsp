@@ -9,7 +9,7 @@
 <body>
 <h1>Menu Principal</h1>
 <ul>
-	<li><a href="Usuarios.jsp">Usuarios</a></li>
+	<li><a href="Usuarios.jsp">Usuarios.</a></li>
 	<li>Clientes</li>
 	<li>Proveedores</li>
 	<li>Productos</li>
