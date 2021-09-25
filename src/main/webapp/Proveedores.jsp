@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<title>Proveedores Tienda Genérica</title>
+<link rel='stylesheet'  href="CSS/StyleProveedores.css">
 </head>
 <body>
- <header>
+<header>
         <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
     </header>
+
+    <nav>
     <nav>
         <a href="" class="MenuH">Usuarios</a>
         <a href="" class="MenuH">Clientes</a>
@@ -20,15 +22,19 @@
         <a href="" class="MenuH">Reportes</a>
     </nav>
 
+    <section>
+        <img class="imagen" src="Imagenes/Proveedores.jpeg"alt="Proveedores">
+    </section>
+   
     <section class="form-login">
-        <input class="controls" type="number" name="Cedula" value=""placeholder="Cédula" >
+        <input class="controls" type="text" name="NIT" value=""placeholder="NIT" >
         <input class="controls" type="text" name="Nombre Completo" value=""placeholder="Nombre completo">
-        <input class="controls" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
+        <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
     </section>
 
     <section class="form-dato">
-        <input class="controlsF" type="text" name="Usuario" value=""placeholder="Usuario" >
-        <input class="controlsF" type="password" name="Contrasena" value=""placeholder="Contraseña">
+        <input class="controlsF" type="number" name="Teléfono " value=""placeholder="Teléfono" >
+        <input class="controlsF" type="text" name="Ciudad" value=""placeholder="Ciudad">
     </section>
 
     <section >
@@ -37,5 +43,6 @@
         <input class="buttons" type="submit" name="" value="Actualizar">
         <input class="buttons" type="submit" name="" value="Borrar">
     </section>
+
 </body>
 </html>

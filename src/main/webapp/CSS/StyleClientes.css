@@ -1,0 +1,116 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: Bodoni MT;
+    background: rgb(21, 100, 94);
+}
+header {
+    margin: 0px;
+}
+
+nav{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: -1px;
+    border-radius: 5px ;
+}
+
+.MenuH {
+    display: inline-block;
+    margin: 5px;
+    background-color:#203438;
+    color: black;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(247, 245, 247);
+    font-size: 20px;
+    width: 160px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid;
+    overflow: hidden;
+    border-radius: 7px;   
+}
+.MenuH:hover{
+    background-color: #3cb1c0;
+    color: black;
+}
+
+.imagen {
+    width: 600px;
+    height: 400px;
+    margin-top: 50px;
+    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+}
+
+.form-login{
+    width: 400px;
+    height: 200px;
+    margin-left: 700px;
+    margin-top: -420px;
+    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;   
+}
+
+.controls{
+    width: 100%;
+    border:1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #d6c6c6;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left ;   
+}
+
+.form-dato{
+    width: 400px;
+    height: 200px;
+    margin-left: 700px;
+    margin-top: 50px;
+    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    padding: 20px 30px;
+    border-top: 4px solid #017bab;
+    color: rgb(240, 240, 53);
+}
+.controlsF{
+    width: 100%;
+    border:1px solid #017bab;
+    margin-bottom: 15px;
+    padding: 11px 10px;
+    background: #d6c6c6;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left ;
+}
+
+.buttons{
+    width: 12%;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 60px ;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 70px;
+    margin-left: 120px;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3;   
+}
+
+.buttons:hover{
+    background: #3cb1c0;
+    color: rgb(102, 48, 48);
+}

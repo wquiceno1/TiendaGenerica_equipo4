@@ -4,13 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<title>Clientes Tienda Genérica</title>
+<link rel='stylesheet'  href="CSS/StyleClientes.css">
 </head>
 <body>
- <header>
+<header>
+<h1> tienda generica</h1>
         <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
-    </header>
+ </header>
+
     <nav>
         <a href="" class="MenuH">Usuarios</a>
         <a href="" class="MenuH">Clientes</a>
@@ -19,16 +21,20 @@
         <a href="" class="MenuH">Ventas</a>
         <a href="" class="MenuH">Reportes</a>
     </nav>
+    
+    <section>
+        <img class="imagen" src="Imagenes/Clientes.jpg"alt="Cliente">
+    </section>
 
     <section class="form-login">
-        <input class="controls" type="number" name="Cedula" value=""placeholder="Cédula" >
+        <input class="controls" type="number" name="Cédula" value=""placeholder="Cédula" >
         <input class="controls" type="text" name="Nombre Completo" value=""placeholder="Nombre completo">
-        <input class="controls" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
+        <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
     </section>
 
     <section class="form-dato">
-        <input class="controlsF" type="text" name="Usuario" value=""placeholder="Usuario" >
-        <input class="controlsF" type="password" name="Contrasena" value=""placeholder="Contraseña">
+        <input class="controlsF" type="number" name="Teléfono" value=""placeholder="Teléfono" >
+        <input class="controlsF" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
     </section>
 
     <section >

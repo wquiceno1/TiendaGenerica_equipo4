@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+*{
+    box-sizing: border-box;
+    margin: opx;
+}
+
+body {
+    font-family: Bodoni MT;
+    background: rgb(21, 100, 94);
+}
+
+header {
+    margin: 0px;
+}
+
+nav{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: -1px;
+    border-radius: 5px ;
+}
+
+.MenuH {
+    display: inline-block;
+    margin: 5px;
+    background-color:#203438;
+    color: black;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(247, 245, 247);
+    font-size: 20px;
+    width: 160px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid;
+    overflow: hidden;
+    border-radius: 7px;   
+}
+.MenuH:hover{
+    background-color: #3cb1c0;
+    color: black;
+}
