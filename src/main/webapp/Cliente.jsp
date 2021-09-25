@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-<h1> tienda generica</h1>
+
         <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
  </header>
 
