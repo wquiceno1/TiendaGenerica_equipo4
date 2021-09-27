@@ -65,8 +65,7 @@ if(request.getAttribute("cedula") != null){
     <fieldset>
 <legend>Consultar Usuario:</legend>
 <form action="Usuarios" method="post">
-<div>
-<label>Cedula:</label><input type="text" name="act_cedula" >
+<div> <label>Cedula:</label><input type="text" name="act_cedula" >
 <input class="buttons" type="submit" name="consultar" value="Consultar">
 </div>
 </form>
