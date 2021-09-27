@@ -46,7 +46,7 @@ nav{
 .imagen {
     width: 600px;
     height: 400px;
-    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 15px 25px;
     border-top: 4px solid #017bab;
     margin-left: 600px;
@@ -59,7 +59,7 @@ nav{
     height: 200px;
     margin-left: 100px;
     margin-top: -420px;
-    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 20px 30px;
     border-top: 4px solid #017bab;   
 }
@@ -80,7 +80,7 @@ nav{
     height: 200px;
     margin-left: 100px;
     margin-top: 50px;
-    box-shadow: 4px 9px 20px rgb(207, 183, 183);
+    box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 20px 30px;
     border-top: 4px solid #017bab;
     color: rgb(240, 240, 53);
