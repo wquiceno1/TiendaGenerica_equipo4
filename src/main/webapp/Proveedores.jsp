@@ -32,6 +32,7 @@
         <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
         <input class="controls" type="number" name="Teléfono " value=""placeholder="Teléfono" >
         <input class="controls" type="text" name="Ciudad" value=""placeholder="Ciudad">
+        
         <input class="buttons" type="submit" name="" value="Consultar">
         <input class="buttons" type="submit" name="" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">

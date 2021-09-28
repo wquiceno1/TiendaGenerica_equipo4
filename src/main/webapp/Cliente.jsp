@@ -29,14 +29,10 @@
         <input class="controls" type="number" name="Cédula" value=""placeholder="Cédula" >
         <input class="controls" type="text" name="Nombre Completo" value=""placeholder="Nombre completo">
         <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
-    </section>
+   
+        <input class="controls" type="number" name="Teléfono" value=""placeholder="Teléfono" >
+        <input class="controls" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
 
-    <section class="form-dato">
-        <input class="controlsF" type="number" name="Teléfono" value=""placeholder="Teléfono" >
-        <input class="controlsF" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
-    </section>
-
-    <section >
         <input class="buttons" type="submit" name="" value="Consultar">
         <input class="buttons" type="submit" name="" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">
