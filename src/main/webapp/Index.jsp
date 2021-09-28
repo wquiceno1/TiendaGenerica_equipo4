@@ -10,10 +10,12 @@
 <body>
   <section class="form-login">
             <h5>Bienvenidos a la Tienda Genérica</h5>
-            <input class="controls" type="text" name="Usuario" value=""placeholder="Usuarios" >
-            <input class="controls" type="password" name="Contraseña" value=""placeholder="Contraseña">
-            <input class="buttons" type="submit" name="" value="Aceptar">
-            <input class="buttons" type="submit" name="" value="Cancelar">
+            <form action="Login" method="post">
+            <input class="controls" type="text" name="usuario" placeholder="Usuario" >
+            <input class="controls" type="password" name="clave" placeholder="Contraseña">
+            <input class="buttons" type="submit" name="Aceptar" value="Aceptar">
+            <input class="buttons" type="submit" name="Cancelar" value="Cancelar">
+            </form>
    </section>
 </body>
 </html>

@@ -39,15 +39,15 @@ if(request.getAttribute("cedula") != null){
     </nav>
 <form action="Usuarios" method="post" id="usuarios">
     <section class="form-login">
-        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> >
+        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
         <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo">
-        <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico">
+        <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico" required>
     </section>
 
     <section class="form-dato">
-        <input class="controlsF" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" >
-        <input class="controlsF" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" >
+        <input class="controlsF" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" required>
+        <input class="controlsF" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" required>
     </section>
 
     <section >
@@ -62,14 +62,15 @@ if(request.getAttribute("cedula") != null){
 		}		
 		%>
     </section>
+</form>
     <fieldset>
 <legend>Consultar Usuario:</legend>
 <form action="Usuarios" method="post">
-<div> <label>Cédula:</label><input class="Use" type="text" name="act_cedula" >
+<div> <label>Cédula:</label><input class="Use" type="text" name="act_cedula" required>
 <input class="button" type="submit" name="consultar" value="Consultar">
 </div>
 </form>
 </fieldset>
-</form>
+
 </body>
 </html>
