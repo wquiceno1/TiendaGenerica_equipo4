@@ -44,9 +44,9 @@ nav{
 
 .form-login{
     width: 500px;
-    height: 420px;
+    height: 400px;
     margin-left: 80px;
-    margin-top: 50px;
+    margin-top: 60px;
     box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 20px 30px;
     border-top: 4px solid #017bab;   
@@ -64,8 +64,8 @@ nav{
 }
 
 .buttons{
-    width: 100px;
-    height: 35px;
+    width: 130px;
+    height: 40px;
     font-size: 16px;
     border: none;
     margin-bottom: 30px;
@@ -87,7 +87,7 @@ fieldset{
 	width: 500px;
 	height: 300px;
 	margin-left: 700px;
-	margin-top: -300px;
+	margin-top: -360px;
 	box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 20px 30px;
     border-top: 4px solid #017bab;
@@ -102,7 +102,7 @@ legend{
 	}
 form {
     margin-top: -300;
-    margin-left: 80px;
+    margin-left: 40px;
     color:black;
     font-size: 22px;
 }
@@ -111,14 +111,15 @@ form {
     width: 250px;
     height: 40px;
     background: #d6c6c6;
+    margin-top: 40px;
 }
 .button {
     width: 150px;
     height: 40px;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
     margin-bottom: 30px;
-    margin-left: 80px ;
+    margin-left: 100px ;
     border-radius: 20px;
     border-bottom: 2px solid;
     margin-top: 10%;
