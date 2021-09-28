@@ -30,14 +30,8 @@
         <input class="controls" type="text" name="NIT" value=""placeholder="NIT" >
         <input class="controls" type="text" name="Nombre Completo" value=""placeholder="Nombre completo">
         <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
-    </section>
-
-    <section class="form-dato">
-        <input class="controlsF" type="number" name="Teléfono " value=""placeholder="Teléfono" >
-        <input class="controlsF" type="text" name="Ciudad" value=""placeholder="Ciudad">
-    </section>
-
-    <section >
+        <input class="controls" type="number" name="Teléfono " value=""placeholder="Teléfono" >
+        <input class="controls" type="text" name="Ciudad" value=""placeholder="Ciudad">
         <input class="buttons" type="submit" name="" value="Consultar">
         <input class="buttons" type="submit" name="" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">
