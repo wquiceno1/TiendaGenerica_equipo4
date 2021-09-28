@@ -43,15 +43,8 @@ if(request.getAttribute("cedula") != null){
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
         <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo">
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico">
-    </section>
-
-    <section class="form-dato">
-        <input class="controlsF" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" >
-        <input class="controlsF" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" >
-    </section>
-
-    <section >
-        
+        <input class="controls" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" >
+        <input class="controls" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" >
         <input class="buttons" type="submit" name="insertar" value="Crear">
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
