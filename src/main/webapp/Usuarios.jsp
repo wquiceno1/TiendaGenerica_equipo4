@@ -30,21 +30,24 @@ if(request.getAttribute("cedula") != null){
 
 %>
     <nav>
-        <a href="" class="MenuH">Usuarios</a>
-        <a href="" class="MenuH">Clientes</a>
-        <a href="" class="MenuH">Proveedores</a>
-        <a href="" class="MenuH">Productos</a>
-        <a href="" class="MenuH">Ventas</a>
-        <a href="" class="MenuH">Reportes</a>
+        <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
+        <a href="Cliente.jsp" class="MenuH">Clientes</a>
+        <a href="Proveedores.jsp" class="MenuH">Proveedores</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
     </nav>
 <form action="Usuarios" method="post" id="usuarios">
     <section class="form-login">
-        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> >
+        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
         <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo">
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico">
         <input class="controls" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" >
         <input class="controls" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" >
+        <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico" required>
+        <input class="controls" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" required>
+        <input class="controls" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" required>
         <input class="buttons" type="submit" name="insertar" value="Crear">
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
@@ -55,14 +58,15 @@ if(request.getAttribute("cedula") != null){
 		}		
 		%>
     </section>
+</form>
     <fieldset>
 <legend>Consultar Usuario:</legend>
 <form action="Usuarios" method="post">
-<div> <label>Cédula:</label><input class="Use" type="text" name="act_cedula" >
+<div> <label>Cédula:</label><input class="Use" type="text" name="act_cedula" required>
 <input class="button" type="submit" name="consultar" value="Consultar">
 </div>
 </form>
 </fieldset>
-</form>
+
 </body>
 </html>

@@ -119,11 +119,7 @@ public class Usuarios extends HttpServlet {
 				// response.sendRedirect("Usuarios.jsp?men=Fallo en el registro.");
 				request.setAttribute("mensaje", "Fallo al actualizar");
 			}
-			request.setAttribute("cedula", user.getCedula_usuario());
-			request.setAttribute("nombre", user.getNombre_usuario());
-			request.setAttribute("correo", user.getEmail_usuario());
-			request.setAttribute("usuario", user.getUsuario());
-			request.setAttribute("clave", user.getPassword());
+
 			rd.forward(request, response);
 
 		}

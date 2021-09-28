@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Clientes Tienda Genérica</title>
+<title>Módulo Clientes</title>
 <link rel='stylesheet'  href="CSS/StyleClientes.css">
 </head>
 <body>
@@ -13,12 +13,12 @@
  </header>
 
     <nav>
-        <a href="" class="MenuH">Usuarios</a>
-        <a href="" class="MenuH">Clientes</a>
-        <a href="" class="MenuH">Proveedores</a>
-        <a href="" class="MenuH">Productos</a>
-        <a href="" class="MenuH">Ventas</a>
-        <a href="" class="MenuH">Reportes</a>
+        <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
+        <a href="Cliente.jsp" class="MenuH">Clientes</a>
+        <a href="Proveedores.jsp" class="MenuH">Proveedores</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
+        <a href="#" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
     </nav>
     
     <section>
