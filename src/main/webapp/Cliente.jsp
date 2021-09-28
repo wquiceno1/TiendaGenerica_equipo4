@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Clientes Tienda Genérica</title>
+<title>Módulo Clientes</title>
 <link rel='stylesheet'  href="CSS/StyleClientes.css">
 </head>
 <body>

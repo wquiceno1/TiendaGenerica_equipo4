@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Proveedores Tienda Genérica</title>
+<title>Módulo Proveedores </title>
 <link rel='stylesheet'  href="CSS/StyleProveedores.css">
 </head>
 <body>
