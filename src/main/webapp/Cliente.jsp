@@ -40,7 +40,7 @@ if(request.getAttribute("cedula") != null){
     <section>
         <img class="imagen" src="Imagenes/Clientes.jpg"alt="Cliente">
     </section>
-
+<form action="Clientes" method="post" id="cliente">
     <section class="form-login">
         <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
@@ -50,10 +50,26 @@ if(request.getAttribute("cedula") != null){
         <input class="controls" type="text" name="telefono" value="<%if(request.getAttribute("cedula") != null){out.print(telefono);}%>" placeholder="Teléfono" required>
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>"placeholder="Correo Electrónico" required>
 
-        <input class="buttons" type="submit" name="consultar" value="Consultar">
         <input class="buttons" type="submit" name="insertar" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">
         <input class="buttons" type="submit" name="" value="Borrar">
     </section>
+  </form>
+    
+    <fieldset>
+
+<legend>Consultar Clientes :</legend>
+
+	<form action="Usuarios" method="post">
+	
+	<div> 
+		<label>Cédula:</label>
+		<input class="Use" type="text" name="act_cedula" required>
+		<input class="button" type="submit" name="consultar" value="Consultar">
+	</div>
+	
+	</form>
+	
+</fieldset>
 </body>
 </html>

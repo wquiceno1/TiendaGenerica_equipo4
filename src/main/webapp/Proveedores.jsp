@@ -39,7 +39,10 @@
         <a href="" class="MenuH">Ventas</a>
         <a href="" class="MenuH">Reportes</a>
     </nav>
-   
+   <section>
+        <img class="imagen" src="Imagenes/Proveedores.jpeg"alt="">
+    </section>
+    
    <form action="Proveedores" method="post" id="proveedores">
    
 	    <section class="form-login">
@@ -65,8 +68,6 @@
 			%>
 	    
 	    </section>
-
-
 
 	</form>
 	    
