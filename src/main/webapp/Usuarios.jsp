@@ -41,7 +41,7 @@ if(request.getAttribute("cedula") != null){
     <section class="form-login">
         <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
-        <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo">
+        <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo" required>
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico" required>
 
         <input class="controls" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" required>
@@ -59,13 +59,21 @@ if(request.getAttribute("cedula") != null){
 		%>
     </section>
 </form>
-    <fieldset>
+
+<fieldset>
+
 <legend>Consultar Usuario:</legend>
-<form action="Usuarios" method="post">
-<div> <label>Cédula:</label><input class="Use" type="text" name="act_cedula" required>
-<input class="button" type="submit" name="consultar" value="Consultar">
-</div>
-</form>
+
+	<form action="Usuarios" method="post">
+	
+	<div> 
+		<label>Cédula:</label>
+		<input class="Use" type="text" name="act_cedula" required>
+		<input class="button" type="submit" name="consultar" value="Consultar">
+	</div>
+	
+	</form>
+	
 </fieldset>
 
 </body>
