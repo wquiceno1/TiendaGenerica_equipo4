@@ -11,11 +11,27 @@
 <header>
         <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
  </header>
+<%!
+int cedula;
+String nombre = "", correo = "", direccion = "", telefono = "", estado = "";
+%>
+<%
 
+if(request.getAttribute("cedula") != null){
+	cedula = Integer.parseInt(String.valueOf(request.getAttribute("cedula")));
+	nombre = String.valueOf(request.getAttribute("nombre"));
+	correo = String.valueOf(request.getAttribute("correo"));
+	direccion = String.valueOf(request.getAttribute("direccion"));
+	telefono = String.valueOf(request.getAttribute("telefono"));
+	estado = "disabled";
+}
+
+
+%>
     <nav>
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
         <a href="Cliente.jsp" class="MenuH">Clientes</a>
-        <a href="Proveedores.jsp" class="MenuH">Proveedores</a><!-- pendiente de crear el enlace -->
+        <a href="Proveedores.jsp" class="MenuH">Proveedores</a>
         <a href="#" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
         <a href="#" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
         <a href="#" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
@@ -26,15 +42,16 @@
     </section>
 
     <section class="form-login">
-        <input class="controls" type="number" name="Cédula" value=""placeholder="Cédula" >
-        <input class="controls" type="text" name="Nombre Completo" value=""placeholder="Nombre completo">
-        <input class="controls" type="text" name="Dirección" value=""placeholder="Dirección">
-   
-        <input class="controls" type="number" name="Teléfono" value=""placeholder="Teléfono" >
-        <input class="controls" type="email" name="Correo Electrónico" value=""placeholder="Correo Electrónico">
+        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
+        <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
+        <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo" required>
+        <input class="controls" type="text" name="direccion" value="<%if(request.getAttribute("cedula") != null){out.print(direccion);}%>" placeholder="Dirección" required>
 
-        <input class="buttons" type="submit" name="" value="Consultar">
-        <input class="buttons" type="submit" name="" value="Crear">
+        <input class="controls" type="text" name="telefono" value="<%if(request.getAttribute("cedula") != null){out.print(telefono);}%>" placeholder="Teléfono" required>
+        <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>"placeholder="Correo Electrónico" required>
+
+        <input class="buttons" type="submit" name="consultar" value="Consultar">
+        <input class="buttons" type="submit" name="insertar" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">
         <input class="buttons" type="submit" name="" value="Borrar">
     </section>
