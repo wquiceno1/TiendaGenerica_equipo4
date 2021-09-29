@@ -17,7 +17,7 @@ public class ProveedorDTO {
 		this.telefono_proveedor = telefono_proveedor;
 	}
 
-
+	// GETS and SETS	
 	public int getNitproveedor() {
 		return nitproveedor;
 	}

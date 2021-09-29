@@ -47,13 +47,12 @@
 	    	<input class="controls" type="number" name="nitproveedor" value="<% if(request.getAttribute("nitproveedor") != null){out.print(nitproveedor);} %>" <%=estado %> placeholder="#Identificación Tributaria" required>
 	    	<input class="controls" type="hidden" name="nit_e" value="<%if(request.getAttribute("nitproveedor") != null){out.print(nitproveedor);}%>">
 	    	
-	    	<input class="controls" type="text" name="nombre_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(nombre_proveedor);}%>" placeholder="Nombre de Proveedor" required>
+	    	<input class="controls" type="text" name="ciudad_provedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(ciudad_provedor);}%>" placeholder="Ciudad de Proveedor" required>
 	    	<input class="controls" type="text" name="direccion_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(direccion_proveedor);}%>" placeholder="Dirección de Proveedor" required>
 	    	
-	    	<input class="controls" type="number" name="telefono_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(telefono_proveedor);}%>" placeholder="Teléfono de Proveedor" required>
-	    	<input class="controls" type="text" name="ciudad_provedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(ciudad_provedor);}%>" placeholder="Ciudad de Proveedor" required>
-	    	
-
+	    	<input class="controls" type="number" name="telefono_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(telefono_proveedor);}%>" placeholder="Teléfono de Proveedor" required>	    	
+			<input class="controls" type="text" name="nombre_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(nombre_proveedor);}%>" placeholder="Nombre de Proveedor" required>
+			
 	        <input class="buttons" type="submit" name="insertar" value="Crear">
 	        <input class="buttons" type="submit" name="actualizar" value="Actualizar">
 	        <input class="buttons" type="submit" name="borrar" value="Borrar">
