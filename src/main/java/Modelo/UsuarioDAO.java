@@ -85,6 +85,24 @@ public class UsuarioDAO {
 		return resul;
 	}
 	
+	public boolean login_usuarios(String usuario, String clave) {
+		boolean resul = false;
+		try {
+			String sql = "SELECT * FROM usuarios WHERE usuario=? AND password=?";
+			ps = conec.prepareStatement(sql);
+			ps.setString(1, usuario);
+			ps.setString(2, clave);
+			res = ps.executeQuery();			
+			while(res.next()) {
+				resul = true;
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error en la consulta... "+e);
+		}
+		
+		return resul;
+	}
+	
 	
 
 }

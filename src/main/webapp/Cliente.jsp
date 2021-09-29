@@ -53,8 +53,14 @@ if(request.getAttribute("cedula") != null){
         <input class="buttons" type="submit" name="insertar" value="Crear">
         <input class="buttons" type="submit" name="" value="Actualizar">
         <input class="buttons" type="submit" name="" value="Borrar">
+        <%
+		if(request.getAttribute("mensaje") != null){
+			out.print(request.getAttribute("mensaje"));	
+			
+		}		
+		%>
     </section>
-  </form>
+</form>
     
     <fieldset>
 
