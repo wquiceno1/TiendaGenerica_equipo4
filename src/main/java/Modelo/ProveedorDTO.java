@@ -8,7 +8,7 @@ public class ProveedorDTO {
 	private String nombre_proveedor;
 	private String telefono_proveedor;
 	
-	
+	// Contructor de Proveedor
 	public ProveedorDTO(int nitproveedor, String ciudad_provedor, String direccion_proveedor, String nombre_proveedor, String telefono_proveedor) {
 		this.nitproveedor = nitproveedor;
 		this.ciudad_provedor = ciudad_provedor;

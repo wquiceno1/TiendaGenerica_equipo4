@@ -11,6 +11,8 @@ import Controlador.Conexion;
 
 public class ProveedorDAO {
 	
+	 //* Servlet implementation class Proveedores, con todaaaaa
+	
 	Conexion cn = new Conexion();
 	Connection conec = cn.conectar();
 	PreparedStatement ps = null;

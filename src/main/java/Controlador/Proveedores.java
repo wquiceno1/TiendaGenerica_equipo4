@@ -15,7 +15,7 @@ import Modelo.ProveedorDAO;
 import Modelo.ProveedorDTO;
 
 /**
- * Servlet implementation class Proveedores
+ * Servlet implementation class Proveedores, con todaaaaa
  */
 @WebServlet("/Proveedores")
 public class Proveedores extends HttpServlet {
