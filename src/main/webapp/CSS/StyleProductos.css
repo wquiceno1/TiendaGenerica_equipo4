@@ -1,0 +1,118 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: Bodoni MT;
+    background: rgb(21, 100, 94);
+}
+header {
+    margin: 0px;
+}
+
+nav{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: -1px;
+    border-radius: 5px ;
+}
+
+.MenuH {
+    display: inline-block;
+    margin: 5px;
+    background-color:#203438;
+    color: black;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(247, 245, 247);
+    font-size: 20px;
+    width: 160px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid;
+    overflow: hidden;
+    border-radius: 7px;   
+}
+.MenuH:hover{
+    background-color: #3cb1c0;
+    color: black;
+}
+
+fieldset{
+	width: 700px;
+	height: 150px;
+	margin-left: 300px;
+	margin-top: 200px;
+	box-shadow: 4px 9px 20px rgb(41, 38, 38);
+    padding: 0px;
+    border-top: 4px solid #017bab;
+    color: black;
+ 
+}
+legend{
+	font-size:21px;
+	color: white;
+    margin-left: 190px;
+
+	}
+form {
+    margin-top: -20px;
+    margin-left: 20px;
+    color:black;
+    font-size: 22px;
+}
+
+.Use {
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 5px;
+}
+.button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 10px ;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 10%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
+}
+.button:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
+
+.form-login{
+    margin-left: 550px;
+    margin-top: 0px;
+}
+
+.buttons{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 10px ;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 10%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3;  
+}
+.buttons:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
