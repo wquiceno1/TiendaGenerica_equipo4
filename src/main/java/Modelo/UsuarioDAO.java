@@ -84,7 +84,7 @@ public class UsuarioDAO {
 		}
 		return resul;
 	}
-	
+	// metodo de login
 	public boolean login_usuarios(String usuario, String clave) {
 		boolean resul = false;
 		try {
