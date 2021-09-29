@@ -15,7 +15,6 @@
 %>
 
 <%
-	// Toma
 	if(request.getAttribute("nitproveedor") != null){
 		
 		nitproveedor = Integer.parseInt(String.valueOf(request.getAttribute("nitproveedor")));
