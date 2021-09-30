@@ -77,11 +77,11 @@ public class ProveedorDAO {
 			
 			String sql ="UPDATE proveedores SET ciudad_provedor=?, direccion_proveedor=?, nombre_proveedor=?, telefono_proveedor=? WHERE nitproveedor=?";
 			ps = conec.prepareStatement(sql);			
-			ps.setInt(1, nit.getNitproveedor());
-			ps.setString(2, nit.getCiudad_provedor());
-			ps.setString(3, nit.getDireccion_proveedor());
-			ps.setString(4, nit.getNombre_proveedor());
-			ps.setString(5, nit.getTelefono_proveedor());
+			ps.setString(1, nit.getCiudad_provedor());
+			ps.setString(2, nit.getDireccion_proveedor());
+			ps.setString(3, nit.getNombre_proveedor());
+			ps.setString(4, nit.getTelefono_proveedor());
+			ps.setInt(5, nit.getNitproveedor());
 			resultado = ps.executeUpdate() > 0;
 			
 		} catch (SQLException ex) {
