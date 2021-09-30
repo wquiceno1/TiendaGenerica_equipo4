@@ -97,7 +97,7 @@ public class Usuarios extends HttpServlet {
 
 		if (request.getParameter("actualizar") != null) {
 			int cedula;
-			String nombre, correo, usuario, clave;
+			String nombre, correo, usuario, clave, estado = "";
 
 			// cargar la info del formulario a las variables
 			cedula = Integer.parseInt(request.getParameter("ced"));
@@ -111,12 +111,11 @@ public class Usuarios extends HttpServlet {
 
 			// insertar el nuevo usuario
 			if (userDao.actualizar_usuario(user)) {
-				// JOptionPane.showMessageDialog(null, "Usuario registrado con exito.");
-				// response.sendRedirect("Usuarios.jsp?men=Usuario registrado con exito.");
+				
 				request.setAttribute("mensaje", "Usuario actualizado exitosamente.");
+				request.setAttribute(estado, "disabled");
 			} else {
-				// JOptionPane.showMessageDialog(null, "Fallo en el registro.");
-				// response.sendRedirect("Usuarios.jsp?men=Fallo en el registro.");
+				
 				request.setAttribute("mensaje", "Fallo al actualizar");
 			}
 

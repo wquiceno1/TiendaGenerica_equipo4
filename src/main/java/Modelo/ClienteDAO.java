@@ -54,5 +54,35 @@ public class ClienteDAO {
 		}
 		return cliente;
 	}
+	
+	public boolean actualizar_cliente(ClienteDTO cliente) {
+		boolean resul = false;
+		try {
+			String sql ="UPDATE clientes SET direccion_cliente=?, email_cliente=?, nombre_cliente=?, telefono_cliente=? WHERE cedula_cliente=?";
+			ps = conec.prepareStatement(sql);			
+			ps.setString(1, cliente.getDireccion_cliente());
+			ps.setString(2, cliente.getEmail_cliente());
+			ps.setString(3, cliente.getNombre_cliente());
+			ps.setString(4, cliente.getTelefono_cliente());
+			ps.setInt(5, cliente.getCedula_cliente());
+			resul = ps.executeUpdate() > 0;
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error al actualizar cliente... "+ex);
+		}
+		return resul;
+	}
+	
+	public boolean eliminar_cliente(int ced) {
+		boolean resul = false;
+		try {
+			String sql ="DELETE FROM clientes WHERE cedula_cliente=?";
+			ps = conec.prepareStatement(sql);
+			ps.setInt(1, ced);
+			resul = ps.executeUpdate() > 0;
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Error al eliminar el cliente... "+ex);
+		}
+		return resul;
+	}
 
 }

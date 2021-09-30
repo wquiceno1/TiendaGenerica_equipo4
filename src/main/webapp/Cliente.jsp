@@ -23,7 +23,7 @@ if(request.getAttribute("cedula") != null){
 	correo = String.valueOf(request.getAttribute("correo"));
 	direccion = String.valueOf(request.getAttribute("direccion"));
 	telefono = String.valueOf(request.getAttribute("telefono"));
-	estado = "disabled";
+	estado = String.valueOf(request.getAttribute("estado"));
 }
 
 
@@ -50,9 +50,9 @@ if(request.getAttribute("cedula") != null){
         <input class="controls" type="text" name="telefono" value="<%if(request.getAttribute("cedula") != null){out.print(telefono);}%>" placeholder="Teléfono" required>
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>"placeholder="Correo Electrónico" required>
 
-        <input class="buttons" type="submit" name="insertar" value="Crear">
-        <input class="buttons" type="submit" name="" value="Actualizar">
-        <input class="buttons" type="submit" name="" value="Borrar">
+        <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
+        <input class="buttons" type="submit" name="actualizar" value="Actualizar">
+        <input class="buttons" type="submit" name="borrar" value="Borrar">
         <%
 		if(request.getAttribute("mensaje") != null){
 			out.print(request.getAttribute("mensaje"));	
@@ -66,7 +66,7 @@ if(request.getAttribute("cedula") != null){
 
 <legend>Consultar Clientes :</legend>
 
-	<form action="Usuarios" method="post">
+	<form action="Clientes" method="post">
 	
 	<div> 
 		<label>Cédula:</label>

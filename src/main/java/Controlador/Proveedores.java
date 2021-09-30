@@ -101,7 +101,7 @@ public class Proveedores extends HttpServlet {
 		if (request.getParameter("actualizar") != null) {
 			
 			int nitproveedor;
-			String ciudad_provedor, direccion_proveedor, nombre_proveedor, telefono_proveedor;
+			String ciudad_provedor, direccion_proveedor, nombre_proveedor, telefono_proveedor, estado = "";
 
 			// cargar la info del formulario a las variables
 			nitproveedor = Integer.parseInt(request.getParameter("nit_e"));
@@ -115,22 +115,16 @@ public class Proveedores extends HttpServlet {
 
 			// actualizar el Proveedor
 			if (proveDao.actualizar_proveedor(proveedor)) {
-				
-				// JOptionPane.showMessageDialog(null, "Proveedor actualizado con exito.");
-				// response.sendRedirect("Proveedores.jsp?men=Proveedor actualizado con exito.");
+
 				request.setAttribute("mensaje", "Proveedor actualizado exitosamente.");
+				request.setAttribute(estado, "disabled");
 				
 			} else {
-				// JOptionPane.showMessageDialog(null, "Fallo en el registro.");
-				// response.sendRedirect("Proveedores.jsp?men=Fallo en el registro.");
+
 				request.setAttribute("mensaje", "Fallo al actualizar");
 			}
 			
-			request.setAttribute("nitproveedor", proveedor.getNitproveedor());
-			request.setAttribute("ciudad_provedor", proveedor.getCiudad_provedor());
-			request.setAttribute("direccion_proveedor", proveedor.getDireccion_proveedor());
-			request.setAttribute("nombre_proveedor", proveedor.getNombre_proveedor());
-			request.setAttribute("telefono_proveedor", proveedor.getTelefono_proveedor());
+
 			rd.forward(request, response);
 
 		}

@@ -22,7 +22,7 @@
 		direccion_proveedor = String.valueOf(request.getAttribute("direccion_proveedor"));
 		nombre_proveedor = String.valueOf(request.getAttribute("nombre_proveedor"));
 		telefono_proveedor = String.valueOf(request.getAttribute("telefono_proveedor"));
-		estado = "disabled";
+		estado = String.valueOf(request.getAttribute("estado"));
 		
 	}
 %>
