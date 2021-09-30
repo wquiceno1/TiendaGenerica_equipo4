@@ -24,7 +24,7 @@ if(request.getAttribute("cedula") != null){
 	correo = String.valueOf(request.getAttribute("correo"));
 	usuario = String.valueOf(request.getAttribute("usuario"));
 	clave = String.valueOf(request.getAttribute("clave"));
-	estado = "disabled";
+	estado = String.valueOf(request.getAttribute("estado"));
 }
 
 
@@ -48,7 +48,7 @@ if(request.getAttribute("cedula") != null){
         <input class="controls" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" required>
 
         
-        <input class="buttons" type="submit" name="insertar" value="Crear">
+        <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
         <%

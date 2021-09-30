@@ -83,10 +83,72 @@ public class Clientes extends HttpServlet {
 						request.setAttribute("telefono", cliente.getTelefono_cliente());
 						rd.forward(request, response);
 					} else {
-						request.setAttribute("mensaje", "El cliente no existe.");
+						JOptionPane.showMessageDialog(null, "El cliente no existe");
 						response.sendRedirect("Cliente.jsp");
 					}
 
+				}
+				
+				// validar si se presiono boton actualizar
+
+				if (request.getParameter("actualizar") != null) {
+					int cedula;
+					String nombre, correo, direccion, telefono, estado = "";
+
+					// cargar la info del formulario a las variables
+					cedula = Integer.parseInt(request.getParameter("cedula"));
+					nombre = request.getParameter("nombre");
+					correo = request.getParameter("correo");
+					direccion = request.getParameter("direccion");
+					telefono = request.getParameter("telefono");
+					
+
+					// cargar las variables al nuevo objeto
+					ClienteDTO cliente = new ClienteDTO(cedula, direccion, correo, nombre, telefono);
+					
+					// insertar el nuevo usuario
+					if (clienteDao.actualizar_cliente(cliente)) {
+						
+						request.setAttribute("mensaje", "Cliente actualizado exitosamente.");
+						request.setAttribute(estado, "disabled");
+					} else {
+						
+						request.setAttribute("mensaje", "Fallo al actualizar cliente");
+						
+					}
+
+					rd.forward(request, response);
+
+				}
+				
+				
+				// validar si se presiono boton borrrar
+				
+				if(request.getParameter("borrar") != null) {
+					int cedula;
+					
+					
+					// cargar la info del formulario a las variables
+					cedula = Integer.parseInt(request.getParameter("ced"));
+					
+										
+					//eliminar el usuario
+					int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el cliente: "+cedula);
+					if(op == 0) {
+						if(clienteDao.eliminar_cliente(cedula)) {				
+							request.setAttribute("mensaje", "Cliente eliminado exitosamente.");
+						} else {				
+							request.setAttribute("mensaje", "Fallo al eliminar cliente");
+						}
+						request.removeAttribute("cedula");
+						request.removeAttribute("nombre");
+						request.removeAttribute("correo");
+						request.removeAttribute("direccion");
+						request.removeAttribute("telefono");
+					}
+					rd.forward(request, response);
+					
+			
 				}
 		
 	}
