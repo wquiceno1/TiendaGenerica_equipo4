@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login Tienda Génerica</title>
+<title>Usuarios Tienda Génerica</title>
 <link rel='stylesheet'  href="CSS/StyleUsuarios.css">
 </head>
 <body>
