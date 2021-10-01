@@ -37,7 +37,7 @@ public class ProveedorDAO {
 				resultado = ps.executeUpdate() > 0;
 				
 			} else {
-				JOptionPane.showMessageDialog(null, "El usuario ya existe.");
+				JOptionPane.showMessageDialog(null, "El proveedor ya existe.");
 			}
 			
 		} catch (SQLException ex) {
