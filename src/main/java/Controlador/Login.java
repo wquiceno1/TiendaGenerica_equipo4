@@ -45,13 +45,11 @@ public class Login extends HttpServlet {
 				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
 				response.sendRedirect("Index.jsp");
 			}
-			/*
-			 * if (usuario.equals("admininicial") && clave.equals("admin123456")) { rd =
-			 * request.getRequestDispatcher("Menu.jsp"); rd.forward(request, response); }
-			 * else { JOptionPane.showMessageDialog(null,
-			 * "Usuario o contraseña incorrecta"); rd =
-			 * request.getRequestDispatcher("Index.jsp"); rd.forward(request, response); }
-			 */
+			
+		}
+		
+		if (request.getParameter("Cancelar") != null) {
+			response.sendRedirect("Index.jsp?men=intente nuevamente");		
 		}
 	}
 }
