@@ -1,0 +1,259 @@
+@charset "ISO-8859-1";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    font-family: Bodoni MT;
+    background: rgb(21, 100, 94);
+}
+
+nav{
+    margin-left: 13%;
+    margin-right: 50px;
+    padding: -1px;
+    border-radius: 5px ;
+}
+
+.MenuH {
+    display: inline-block;
+    margin: 5px;
+    background-color:#203438;
+    color: black;
+    height: 50px;
+    text-decoration: none;
+    color: rgb(247, 245, 247);
+    font-size: 20px;
+    width: 160px;
+    text-align: center;
+    padding: 8px;
+    border-bottom: 2px solid;
+    overflow: hidden;
+    border-radius: 7px;      
+}
+.MenuH:hover{
+    background-color: #3cb1c0;
+    color: black;
+}
+.formulario1{
+    width: 1200px;
+    background: rgb(37, 158, 214);
+    opacity: 0.9;
+	height: 200px;
+	margin-left: 5%;
+	margin-top: 5%;
+	box-shadow: 4px 9px 20px rgb(41, 38, 38);
+    padding: 0px;
+    border-top: 4px solid #017bab;
+    color: black;
+}
+form {
+    margin-top: -4%;
+    margin-left: 2%;
+    color:black;
+    font-size: 22px;
+}
+
+.Use {
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 5px;
+}
+.button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 10px ;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 10%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
+}
+.button:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
+
+.formulario2 {
+    width: 1300px;
+	height: 530px;
+    background: rgb(37, 158, 214);
+    opacity: 0.9;
+	margin-left: 2%;
+	margin-top: 100px;
+	box-shadow: 4px 9px 20px rgb(41, 38, 38);
+    padding: 0px;
+    border-top: 4px solid #017bab;
+    color: black;
+}
+.codProd {
+    margin-top: 3%;
+    margin-left: 10%;
+    display: block;
+    color:black;
+    font-size: 22px;
+}
+.UseCod {
+    display: block;
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.NombreS{
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 26%;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: -13%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
+}
+
+.NombreS:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
+
+.buttons {
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 26%;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 2%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
+}
+
+.buttons:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
+.NombreP {
+    margin-top: -20%;
+    margin-left: 50%;
+    display: block;
+    color:black;
+    font-size: 22px;
+}
+.NProducto {
+    display: block;
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 2%;
+    margin-left: 40%;
+}
+
+.NomProductos{
+    display: block;
+    width: 100px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: -13%;
+    margin-left: 800px;
+}
+.NomProducto{
+    display: block;
+    width: 100px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 2%;
+    margin-left: 800px;
+}
+.prodVenta {
+    display: block;
+    margin-top: -17%;
+    margin-left: 1020px;
+    display: block;
+    color:black;
+    font-size: 22px;
+}
+.UseTotal{
+    display: block;
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 2%;
+    margin-left: 950px;
+}
+
+
+.NombreSon {
+    display: block;
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: -10%;
+    margin-left: 950px;
+}
+.buttonss {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 550px ;
+    border-radius: 20px;
+    border-bottom: 2px solid;
+    margin-top: 10%;
+    box-shadow: 1px 3px 5px rgb(255, 253, 253);
+    color:rgb(247, 236, 236);
+    background: #1c3338;
+    box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
+}
+.buttonss:hover{
+    background:  #3cb1c0;
+    color: rgb(102, 48, 48);
+}
+
+.UseProducto {
+    display: block;
+    width: 250px;
+    height: 40px;
+    background: #d6c6c6;
+    margin-top: 2%;
+    margin-left: 950px;
+}
+.prodf {
+    display: block;
+    margin-top: -12%;
+    display: block;
+    color:black;
+    font-size: 22px;
+    margin-left: 750px;
+}
+
+.prod {
+    display: block;
+    margin-top: 3%;
+    display: block;
+    color:black;
+    font-size: 22px;
+    margin-left: 750px;
+}
