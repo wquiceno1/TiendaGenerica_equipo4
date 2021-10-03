@@ -52,10 +52,10 @@ if(request.getAttribute("cedula") != null){
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
         <%
-		if(request.getAttribute("mensaje") != null){
-			out.print(request.getAttribute("mensaje"));	
-			
-		}		
+			if(request.getParameter("men")!=null){
+			String mensaje=request.getParameter("men");
+			out.print("<script>alert('"+mensaje+"');</script>");
+			}
 		%>
     </section>
 </form>

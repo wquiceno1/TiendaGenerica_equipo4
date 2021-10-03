@@ -56,16 +56,14 @@ public class Usuarios extends HttpServlet {
 
 			// insertar el nuevo usuario
 			if (userDao.insertar_usuario(user)) {
-				// JOptionPane.showMessageDialog(null, "Usuario registrado con exito.");
-				// response.sendRedirect("Usuarios.jsp?men=Usuario registrado con exito.");
-				request.setAttribute("mensaje", "Usuario registrado exitosamente.");
+				
+				response.sendRedirect("Usuarios.jsp?men=Usuario registrado exitosamente.");
 			} else {
-				// JOptionPane.showMessageDialog(null, "Fallo en el registro.");
-				// response.sendRedirect("Usuarios.jsp?men=Fallo en el registro.");
-				request.setAttribute("mensaje", "Fallo en el registro");
+				
+				response.sendRedirect("Usuarios.jsp?men=Fallo en el registro");
 			}
 
-			rd.forward(request, response);
+			
 			request.removeAttribute("cedula");
 			request.removeAttribute("nombre");
 			request.removeAttribute("correo");
@@ -86,9 +84,7 @@ public class Usuarios extends HttpServlet {
 				request.setAttribute("clave", user.getPassword());
 				rd.forward(request, response);
 			} else {
-				JOptionPane.showMessageDialog(null, "El usuario no existe");
-				request.setAttribute("mensaje", "El usuario no existe.");
-				response.sendRedirect("Usuarios.jsp");
+				response.sendRedirect("Usuarios.jsp?men=Usuario no existe.");
 			}
 
 		}
@@ -112,14 +108,14 @@ public class Usuarios extends HttpServlet {
 			// insertar el nuevo usuario
 			if (userDao.actualizar_usuario(user)) {
 				
-				request.setAttribute("mensaje", "Usuario actualizado exitosamente.");
+				response.sendRedirect("Usuarios.jsp?men=Usuario actualizado exitosamente.");
 				request.setAttribute(estado, "disabled");
 			} else {
 				
-				request.setAttribute("mensaje", "Fallo al actualizar");
+				response.sendRedirect("Usuarios.jsp?men=Fallo al actualizar.");
 			}
 
-			rd.forward(request, response);
+			
 
 		}
 		
@@ -137,9 +133,9 @@ public class Usuarios extends HttpServlet {
 			int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el usuario: "+cedula);
 			if(op == 0) {
 				if(userDao.eliminar_usuario(cedula)) {				
-					request.setAttribute("mensaje", "Usuario eliminado exitosamente.");
+					response.sendRedirect("Usuarios.jsp?men=Usuario eliminado exitosamente.");
 				} else {				
-					request.setAttribute("mensaje", "Fallo al eliminar");
+					response.sendRedirect("Usuarios.jsp?men=Fallo al eliminar.");
 				}
 				request.removeAttribute("cedula");
 				request.removeAttribute("nombre");
@@ -147,7 +143,7 @@ public class Usuarios extends HttpServlet {
 				request.removeAttribute("usuario");
 				request.removeAttribute("clave");
 			}
-			rd.forward(request, response);
+			
 			
 	
 		}
