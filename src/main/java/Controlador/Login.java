@@ -42,14 +42,14 @@ public class Login extends HttpServlet {
 			if(userDao.login_usuarios(usuario, clave)) {
 				response.sendRedirect("Menu.jsp");
 			} else {
-				JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
-				response.sendRedirect("Index.jsp");
+				//JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrecta");
+				response.sendRedirect("Index.jsp?men=Usuario o password incorrecta");
 			}
 			
 		}
 		
 		if (request.getParameter("Cancelar") != null) {
-			response.sendRedirect("Index.jsp?men=intente nuevamente");		
+			response.sendRedirect("Index.jsp");		
 		}
 	}
 }

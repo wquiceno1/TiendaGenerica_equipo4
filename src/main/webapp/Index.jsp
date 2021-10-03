@@ -16,6 +16,12 @@
             <input class="buttons" type="submit" name="Aceptar" value="Aceptar">
             <input class="buttons" type="submit" name="Cancelar" value="Cancelar">
             </form>
+			<%
+			if(request.getParameter("men")!=null){
+			String mensaje=request.getParameter("men");
+			out.print("<script>alert('"+mensaje+"');</script>");
+			}
+			%>
    </section>
 </body>
 </html>
