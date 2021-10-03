@@ -57,12 +57,12 @@ public class Clientes extends HttpServlet {
 
 					// insertar el nuevo usuario
 					if (clienteDao.insertar_cliente(cliente)) {
-						request.setAttribute("mensaje", "Cliente registrado exitosamente.");
+						response.sendRedirect("Cliente.jsp?men=Cliente registrado exitosamente.");
 					} else {
-						request.setAttribute("mensaje", "Fallo en el registro de cliente");
+						response.sendRedirect("Cliente.jsp?men=Fallo en el registro del cliente.");
 					}
 
-					rd.forward(request, response);
+					
 					request.removeAttribute("cedula");
 					request.removeAttribute("nombre");
 					request.removeAttribute("correo");
@@ -82,9 +82,8 @@ public class Clientes extends HttpServlet {
 						request.setAttribute("direccion", cliente.getDireccion_cliente());
 						request.setAttribute("telefono", cliente.getTelefono_cliente());
 						rd.forward(request, response);
-					} else {
-						JOptionPane.showMessageDialog(null, "El cliente no existe");
-						response.sendRedirect("Cliente.jsp");
+					} else {						
+						response.sendRedirect("Cliente.jsp?men=El cliente no existe.");
 					}
 
 				}
@@ -108,16 +107,15 @@ public class Clientes extends HttpServlet {
 					
 					// insertar el nuevo usuario
 					if (clienteDao.actualizar_cliente(cliente)) {
-						
-						request.setAttribute("mensaje", "Cliente actualizado exitosamente.");
+						response.sendRedirect("Cliente.jsp?men=Cliente actualizado exitosamente.");
 						request.setAttribute(estado, "disabled");
 					} else {
 						
-						request.setAttribute("mensaje", "Fallo al actualizar cliente");
+						response.sendRedirect("Cliente.jsp?men=Error al actualizar cliente");
 						
 					}
 
-					rd.forward(request, response);
+					
 
 				}
 				
@@ -136,9 +134,9 @@ public class Clientes extends HttpServlet {
 					int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el cliente: "+cedula);
 					if(op == 0) {
 						if(clienteDao.eliminar_cliente(cedula)) {				
-							request.setAttribute("mensaje", "Cliente eliminado exitosamente.");
+							response.sendRedirect("Cliente.jsp?men=Cliente eliminado con exito");
 						} else {				
-							request.setAttribute("mensaje", "Fallo al eliminar cliente");
+							response.sendRedirect("Cliente.jsp?men=Error al eliminar cliente");
 						}
 						request.removeAttribute("cedula");
 						request.removeAttribute("nombre");
@@ -146,7 +144,7 @@ public class Clientes extends HttpServlet {
 						request.removeAttribute("direccion");
 						request.removeAttribute("telefono");
 					}
-					rd.forward(request, response);
+					
 					
 			
 				}
