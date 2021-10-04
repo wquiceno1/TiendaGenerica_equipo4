@@ -13,12 +13,12 @@
     </header>
 
     <nav>
-        <a href="" class="MenuH">Usuarios</a>
-        <a href="" class="MenuH">Clientes</a>
-        <a href="" class="MenuH">Proveedores</a>
-        <a href="" class="MenuH">Productos</a>
-        <a href="" class="MenuH">Ventas</a>
-        <a href="" class="MenuH">Reportes</a>
+        <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
+        <a href="Cliente.jsp" class="MenuH">Clientes</a>
+        <a href="Proveedores.jsp" class="MenuH">Proveedores</a>
+        <a href="Productos.jsp" class="MenuH">Productos</a>
+        <a href="Ventas.jsp" class="MenuH">Ventas</a>
+        <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
     
     <fieldset>
