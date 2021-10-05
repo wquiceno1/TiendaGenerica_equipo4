@@ -132,7 +132,7 @@ public class Proveedores extends HttpServlet {
 			if(opcion == 0) {
 				
 				if(proveDao.eliminar_proveedor(nitproveedor)) {				
-					response.sendRedirect("Proveedores.jsp?men=Proveedor eliminado exitosamente.");
+					response.sendRedirect("Proveedores.jsp?men=Proveedor eliminado exitosamente.");					
 					
 				} else {				
 					response.sendRedirect("Proveedores.jsp?men=Fallo al eliminar.");

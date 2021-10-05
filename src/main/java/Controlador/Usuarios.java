@@ -131,6 +131,7 @@ public class Usuarios extends HttpServlet {
 								
 			//eliminar el usuario
 			int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el usuario: "+cedula);
+			
 			if(op == 0) {
 				
 				if(userDao.eliminar_usuario(cedula)) {				
