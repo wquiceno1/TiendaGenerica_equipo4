@@ -50,7 +50,7 @@ if(request.getAttribute("cedula") != null){
         
         <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
-        <input class="buttons" type="submit" name="borrar" value="Borrar">
+        <input class="buttons" type="submit" name="borrar" value="Borrar" <%=estado %>>
         
         <%
 			if(request.getParameter("men")!=null){

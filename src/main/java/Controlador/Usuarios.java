@@ -82,6 +82,7 @@ public class Usuarios extends HttpServlet {
 				request.setAttribute("correo", user.getEmail_usuario());
 				request.setAttribute("usuario", user.getUsuario());
 				request.setAttribute("clave", user.getPassword());
+				request.setAttribute("estado", "disabled");
 				rd.forward(request, response);
 			} else {
 				response.sendRedirect("Usuarios.jsp?men=Usuario no existe.");

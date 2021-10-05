@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.swing.JOptionPane;
 
+import Modelo.ProductosDAO;
 
 /**
  * Servlet implementation class Productos
@@ -22,34 +23,39 @@ import javax.swing.JOptionPane;
 @MultipartConfig
 public class Productos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-		if(request.getParameter("cargar") != null) {
+		// instaciar el procto dao
+		ProductosDAO prod = new ProductosDAO();
+
+		if (request.getParameter("cargar") != null) {
 			Part archivo = request.getPart("archivo");
-			
-			String url = "C:\\Users\\William\\eclipse-workspace\\CRUD\\TiendaGenerica_equipo4\\src\\main\\webapp\\Documentos\\";
+
+			String url = "C:/Users/William/eclipse-workspace/CRUD/TiendaGenerica_equipo4/src/main/webapp/Documentos/";
 			try {
-			InputStream file = archivo.getInputStream();
-			File copia = new File(url + "prueba.csv");
-			FileOutputStream escribir = new FileOutputStream(copia);
-			int num = file.read();
-			while(num != -1) {
-				escribir.write(num);
-				num = file.read();						
-			}
-			escribir.close();
-			file.close();
-			JOptionPane.showMessageDialog(null, "Se cargo el archivo");
+				InputStream file = archivo.getInputStream();
+				File copia = new File(url + "prueba.csv");
+				FileOutputStream escribir = new FileOutputStream(copia);
+				int num = file.read();
+				while (num != -1) {
+					escribir.write(num);
+					num = file.read();
+				}
+				escribir.close();
+				file.close();
+				JOptionPane.showMessageDialog(null, "Se cargo el archivo");
+				if (prod.Cargar_Productos(url + "prueba.csv")) {
+					response.sendRedirect("Productos.jsp?men=Productos insertados correctamente..");
+				} else {
+					response.sendRedirect("Productos.jsp?men=Error al registrar productos..");
+				}
 			} catch (Exception e) {
-				// TODO: handle exception
+				JOptionPane.showMessageDialog(null, "Error de archivo" + e);
 			}
 		}
-		
-		
-		
-		
+
 	}
 
 }
