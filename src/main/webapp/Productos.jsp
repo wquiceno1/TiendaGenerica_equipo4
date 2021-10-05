@@ -23,20 +23,16 @@
     
     <fieldset>
 
-        <form action="Productos" method="post">
+        <form action="Productos" method="post" enctype="multipart/form-data">
         <div> 
-            <label>Nombre del producto:</label>
-            <input class="Use" type="text" name="producto" required>
-            <input class="button" type="submit" name="Examinar" value="Examinar">
+            <label>Archivo:</label>
+            <input type="file" value="Examinar" name="archivo" >
+            <input class="buttons" type="submit" name="cargar" value="Cargar Archivo">
         </div>
         </form>
     </fieldset>
 
-    <form action="Producto">
-    <section class="form-login">
-        <input class="buttons" type="submit" name="" value="Cargar">
-    </section>
-    </form>
+
 
 </body>
 </html>

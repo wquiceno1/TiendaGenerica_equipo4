@@ -93,7 +93,7 @@ public class Usuarios extends HttpServlet {
 
 		if (request.getParameter("actualizar") != null) {
 			int cedula;
-			String nombre, correo, usuario, clave, estado = "";
+			String nombre, correo, usuario, clave, estado = ""; 
 
 			// cargar la info del formulario a las variables
 			cedula = Integer.parseInt(request.getParameter("ced"));
