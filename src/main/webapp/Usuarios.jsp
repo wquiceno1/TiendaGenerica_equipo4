@@ -33,9 +33,9 @@ if(request.getAttribute("cedula") != null){
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
         <a href="Cliente.jsp" class="MenuH">Clientes</a>
         <a href="Proveedores.jsp" class="MenuH">Proveedores</a><!-- pendiente de crear el enlace -->
-        <a href="#" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
-        <a href="#" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
-        <a href="#" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
+        <a href="Productos.jsp" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
+        <a href="Ventas.jsp" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
+        <a href="Reportes.jsp" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
     </nav>
    <form action="Usuarios" method="post" id="usuarios">
     <section class="form-login">
@@ -51,12 +51,14 @@ if(request.getAttribute("cedula") != null){
         <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
+        
         <%
 			if(request.getParameter("men")!=null){
 			String mensaje=request.getParameter("men");
 			out.print("<script>alert('"+mensaje+"');</script>");
 			}
 		%>
+		
     </section>
 </form>
 

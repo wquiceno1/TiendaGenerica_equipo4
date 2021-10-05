@@ -55,17 +55,12 @@ public class Proveedores extends HttpServlet {
 
 			// insertar el nuevo proveedor
 			if (proveDao.insertar_proveedor(proveedor)) {
-				// JOptionPane.showMessageDialog(null, "Proveedor registrado con exito.");
-				// response.sendRedirect("Proveedores.jsp?men=Proveedor registrado con exito.");
-				request.setAttribute("mensaje", "Proveedor registrado exitosamente.");
+				response.sendRedirect("Proveedores.jsp?men=Proveedor registrado exitosamente.");
 				
 			} else {
-				// JOptionPane.showMessageDialog(null, "Fallo en el registro.");
-				// response.sendRedirect("Proveedores.jsp?men=Fallo en el registro.");
-				request.setAttribute("mensaje", "Fallo en el registro");
+				response.sendRedirect("Proveedores.jsp?men=Fallo en el registro.");
 			}
 
-			rd.forward(request, response);
 			request.removeAttribute("nitproveedor");
 			request.removeAttribute("ciudad_provedor");
 			request.removeAttribute("direccion_proveedor");
@@ -88,9 +83,7 @@ public class Proveedores extends HttpServlet {
 				rd.forward(request, response);
 				
 			} else {
-				JOptionPane.showMessageDialog(null, "El proveedor no existe");
-				request.setAttribute("mensaje", "El proveedor no existe.");
-				response.sendRedirect("Proveedores.jsp");
+				response.sendRedirect("Proveedores.jsp?men=El proveedor no existe.");
 			}
 
 		}
@@ -114,17 +107,13 @@ public class Proveedores extends HttpServlet {
 
 			// actualizar el Proveedor
 			if (proveDao.actualizar_proveedor(proveedor)) {
-
-				request.setAttribute("mensaje", "Proveedor actualizado exitosamente.");
+				response.sendRedirect("Proveedores.jsp?men=Proveedor actualizado exitosamente.");
 				request.setAttribute(estado, "disabled");
 				
 			} else {
-
-				request.setAttribute("mensaje", "Fallo al actualizar");
+				response.sendRedirect("Proveedores.jsp?men=Fallo al actualizar.");
 			}
 			
-
-			rd.forward(request, response);
 
 		}
 		
@@ -143,10 +132,10 @@ public class Proveedores extends HttpServlet {
 			if(opcion == 0) {
 				
 				if(proveDao.eliminar_proveedor(nitproveedor)) {				
-					request.setAttribute("mensaje", "Proveedor eliminado exitosamente.");
+					response.sendRedirect("Proveedores.jsp?men=Proveedor eliminado exitosamente.");					
 					
 				} else {				
-					request.setAttribute("mensaje", "Fallo al eliminar");
+					response.sendRedirect("Proveedores.jsp?men=Fallo al eliminar.");
 				}
 				
 				request.removeAttribute("nitproveedor");
@@ -155,7 +144,6 @@ public class Proveedores extends HttpServlet {
 				request.removeAttribute("nombre_proveedor");
 				request.removeAttribute("telefono_proveedor");
 			}
-			rd.forward(request, response);
 			
 	
 		}

@@ -35,9 +35,9 @@
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
         <a href="Cliente.jsp" class="MenuH">Clientes</a>
         <a href="Proveedores.jsp" class="MenuH">Proveedores</a>
-        <a href="" class="MenuH">Productos</a>
-        <a href="" class="MenuH">Ventas</a>
-        <a href="" class="MenuH">Reportes</a>
+        <a href="Productos.jsp" class="MenuH">Productos</a>
+        <a href="Ventas.jsp" class="MenuH">Ventas</a>
+        <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
    <section>
         <img class="imagen" src="Imagenes/Proveedores.jpeg"alt="">
@@ -61,9 +61,9 @@
 	        <input class="buttons" type="submit" name="borrar" value="Borrar">
 	        
 	        <%
-				if(request.getAttribute("mensaje") != null){
-					out.print(request.getAttribute("mensaje"));	
-					
+	        	if(request.getParameter("men")!=null){
+					String mensaje=request.getParameter("men");
+					out.print("<script>alert('"+mensaje+"');</script>");
 				}
 			%>
 	    
