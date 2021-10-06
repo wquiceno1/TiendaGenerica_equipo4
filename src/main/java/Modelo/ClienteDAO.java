@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -83,6 +85,28 @@ public class ClienteDAO {
 			JOptionPane.showMessageDialog(null, "Error al eliminar el cliente... "+ex);
 		}
 		return resul;
+	}
+	
+	public List listar() {
+		ArrayList<ClienteDTO> list = new ArrayList<>();
+		String sql = "select * from clientes";
+		try {
+			ps = conec.prepareStatement(sql);
+			res = ps.executeQuery();
+			while(res.next()) {
+				ClienteDTO cliente = new ClienteDTO();
+				cliente.setCedula_cliente(res.getInt("cedula_cliente"));
+				cliente.setDireccion_cliente(res.getString("direccion_cliente"));
+				cliente.setEmail_cliente(res.getString("email_cliente"));
+				cliente.setNombre_cliente(res.getString("nombre_cliente"));
+				cliente.setTelefono_cliente(res.getString("telefono_cliente"));
+				list.add(cliente);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return list;
 	}
 
 }

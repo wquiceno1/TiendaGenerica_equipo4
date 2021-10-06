@@ -37,7 +37,8 @@ public class Usuarios extends HttpServlet {
 
 		// crear un despacher para redireccionar
 		RequestDispatcher rd = request.getRequestDispatcher("Usuarios.jsp");
-
+		
+		//String estado = "";
 		// validar si se presiono boton crear
 
 		if (request.getParameter("insertar") != null) {
@@ -56,7 +57,7 @@ public class Usuarios extends HttpServlet {
 
 			// insertar el nuevo usuario
 			if (userDao.insertar_usuario(user)) {
-				
+				//request.setAttribute("estadob", "disabled");
 				response.sendRedirect("Usuarios.jsp?men=Usuario registrado exitosamente.");
 			} else {
 				
@@ -69,6 +70,8 @@ public class Usuarios extends HttpServlet {
 			request.removeAttribute("correo");
 			request.removeAttribute("usuario");
 			request.removeAttribute("clave");
+			request.removeAttribute("estado");
+			request.removeAttribute("estadob");
 		}
 
 		// validar si se presiono boton consultar
@@ -83,7 +86,9 @@ public class Usuarios extends HttpServlet {
 				request.setAttribute("usuario", user.getUsuario());
 				request.setAttribute("clave", user.getPassword());
 				request.setAttribute("estado", "disabled");
+				request.setAttribute("estadob", "");
 				rd.forward(request, response);
+				
 			} else {
 				response.sendRedirect("Usuarios.jsp?men=Usuario no existe.");
 			}
@@ -94,7 +99,7 @@ public class Usuarios extends HttpServlet {
 
 		if (request.getParameter("actualizar") != null) {
 			int cedula;
-			String nombre, correo, usuario, clave, estado = ""; 
+			String nombre, correo, usuario, clave; 
 
 			// cargar la info del formulario a las variables
 			cedula = Integer.parseInt(request.getParameter("ced"));
@@ -102,18 +107,23 @@ public class Usuarios extends HttpServlet {
 			correo = request.getParameter("correo");
 			usuario = request.getParameter("usuario");
 			clave = request.getParameter("clave");
+			//request.setAttribute("estadob", "disabled");
 
 			// cargar las variables al nuevo objeto
 			UsuarioDTO user = new UsuarioDTO(cedula, correo, nombre, usuario, clave);
 
 			// insertar el nuevo usuario
 			if (userDao.actualizar_usuario(user)) {
-				
+				request.removeAttribute("estado");
+				request.removeAttribute("estadob");
 				response.sendRedirect("Usuarios.jsp?men=Usuario actualizado exitosamente.");
-				request.setAttribute(estado, "disabled");
-			} else {
+				//request.setAttribute(estado, "");
 				
+			} else {
+				request.removeAttribute("estado");
+				request.removeAttribute("estadob");
 				response.sendRedirect("Usuarios.jsp?men=Fallo al actualizar.");
+				//request.setAttribute(estado, "");
 			}
 
 			
@@ -133,20 +143,20 @@ public class Usuarios extends HttpServlet {
 			//eliminar el usuario
 			int op = JOptionPane.showConfirmDialog(null, "Desea eliminar el usuario: "+cedula);
 			
-			if(op == 0) {
-				
+			if(op == 0) {				
 				if(userDao.eliminar_usuario(cedula)) {				
 					response.sendRedirect("Usuarios.jsp?men=Usuario eliminado exitosamente.");
-					
-				} else {				
-					response.sendRedirect("Usuarios.jsp?men=Fallo al eliminar.");
 				}
-				
+			}else {				
+				response.sendRedirect("Usuarios.jsp?men=Fallo al eliminar.&est=''");
 				request.removeAttribute("cedula");
 				request.removeAttribute("nombre");
 				request.removeAttribute("correo");
 				request.removeAttribute("usuario");
 				request.removeAttribute("clave");
+				request.removeAttribute("estado");
+				request.removeAttribute("estadob");
+				
 			}
 			
 			

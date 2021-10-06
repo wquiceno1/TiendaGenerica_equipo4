@@ -21,12 +21,12 @@
         <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
 
-        <form action="Cliente" method="post">
+        
         <div>
-            <input class="button" type="submit" name="" value="Lista de Usuarios">
-            <input class="buttons" type="submit" name="" value="Lista de Clientes">
+            <a href="ReporteListaUsuarios.jsp"><input class="button" type="button" name="" value="Lista de Usuarios"></a>
+            <a href="ReportesListaClientes.jsp"><input class="button" type="button" name="" value="Lista de Clientes"></a>
             <input class="buttons" type="submit" name="" value="Venta por Cliente">
         </div>
-    </form>
+
 </body>
 </html>

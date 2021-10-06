@@ -17,6 +17,9 @@ public class UsuarioDTO {
 		this.usuario = usuario;
 		this.password = password;
 	}
+	public UsuarioDTO() {
+		
+	}
 
 
 	public int getCedula_usuario() {

@@ -17,6 +17,10 @@ public class ClienteDTO {
 		this.nombre_cliente = nombre_cliente;
 		this.telefono_cliente = telefono_cliente;
 	}
+	
+	public ClienteDTO() {
+		
+	}
 
 
 	public int getCedula_cliente() {
