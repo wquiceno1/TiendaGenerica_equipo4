@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Usuarios Tienda Génerica</title>
 <link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<script type="text/javascript" src="./botones.js"></script>
 </head>
 <body>
  <header>
@@ -41,7 +42,7 @@ if(request.getAttribute("cedula") != null){
         <a href="Ventas.jsp" class="MenuH">Ventas</a>
         <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
-   <form action="Usuarios" method="post" id="usuarios">
+   <form action="Usuarios" method="post" id="usuarios" name="formulario" onformchange="mostrar()">
     <section class="form-login">
         <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%if(request.getAttribute("cedula") != null){out.print(estado);}%>  required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
@@ -54,7 +55,7 @@ if(request.getAttribute("cedula") != null){
         
         <input class="buttons" type="submit" name="insertar" value="Crear" <%if(request.getAttribute("cedula") != null){out.print(estado);}%>>
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
-        <input class="buttons" type="submit" name="borrar" value="Borrar" <%=estadob%>>
+        <input class="buttons" type="submit" name="borrar" id="borrar" value="Borrar" >
         
         <%
 			if(request.getParameter("men")!=null){
@@ -70,12 +71,12 @@ if(request.getAttribute("cedula") != null){
 
 <legend>Consultar Usuario:</legend>
 
-	<form action="Usuarios" method="post">
+	<form action="Usuarios" method="post" name="consul" >
 	
 	<div> 
 		<label>Cédula:</label>
-		<input class="Use" type="text" name="act_cedula" required>
-		<input class="button" type="submit" name="consultar" value="Consultar">
+		<input class="Use" type="text" name="act_cedula" required onclick="ocultar()">
+		<input class="button" type="submit" name="consultar" value="Consultar" id="consultar" >
 	</div>
 	
 	</form>

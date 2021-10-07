@@ -38,7 +38,7 @@ public class Productos extends HttpServlet {
 			try {
 				InputStream file = archivo.getInputStream();
 				File copia = new File(url + "prueba.csv");
-				
+				// validacion de extension de archivo
 				String fileName = archivo.getSubmittedFileName();
 				String fe = "";
 				int i = fileName.lastIndexOf('.');
