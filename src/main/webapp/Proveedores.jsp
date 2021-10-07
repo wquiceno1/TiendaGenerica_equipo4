@@ -56,9 +56,9 @@
 	    	<input class="controls" type="text" name="nombre_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(nombre_proveedor);}%>" placeholder="Nombre de Proveedor" required>
 	    	<input class="controls" type="number" name="telefono_proveedor" value="<%if(request.getAttribute("nitproveedor") != null){out.print(telefono_proveedor);}%>" placeholder="Teléfono de Proveedor" required>
 			
-	        <input class="buttons" type="submit" name="insertar" value="Crear">
-	        <input class="buttons" type="submit" name="actualizar" value="Actualizar">
-	        <input class="buttons" type="submit" name="borrar" value="Borrar">
+	        <input class="buttons" type="submit" name="insertar" value="Crear" >
+	        <input class="buttons" type="submit" name="actualizar" value="Actualizar" >
+	        <input class="buttons" type="submit" name="borrar" value="Borrar" >
 	        
 	        <%
 	        	if(request.getParameter("men")!=null){
