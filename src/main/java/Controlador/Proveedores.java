@@ -66,6 +66,7 @@ public class Proveedores extends HttpServlet {
 			request.removeAttribute("direccion_proveedor");
 			request.removeAttribute("nombre_proveedor");
 			request.removeAttribute("telefono_proveedor");
+			request.removeAttribute("estado");
 		}
 
 		// validar si se presiono boton consultar
@@ -80,6 +81,7 @@ public class Proveedores extends HttpServlet {
 				request.setAttribute("direccion_proveedor", proveedor.getDireccion_proveedor());
 				request.setAttribute("nombre_proveedor", proveedor.getNombre_proveedor());
 				request.setAttribute("telefono_proveedor", proveedor.getTelefono_proveedor());
+				request.setAttribute("estado", "disabled");
 				rd.forward(request, response);
 				
 			} else {
@@ -93,7 +95,7 @@ public class Proveedores extends HttpServlet {
 		if (request.getParameter("actualizar") != null) {
 			
 			int nitproveedor;
-			String ciudad_provedor, direccion_proveedor, nombre_proveedor, telefono_proveedor, estado = "";
+			String ciudad_provedor, direccion_proveedor, nombre_proveedor, telefono_proveedor;
 
 			// cargar la info del formulario a las variables
 			nitproveedor = Integer.parseInt(request.getParameter("nit_e"));
@@ -107,10 +109,12 @@ public class Proveedores extends HttpServlet {
 
 			// actualizar el Proveedor
 			if (proveDao.actualizar_proveedor(proveedor)) {
+				request.removeAttribute("estado");
 				response.sendRedirect("Proveedores.jsp?men=Proveedor actualizado exitosamente.");
-				request.setAttribute(estado, "disabled");
+				//request.setAttribute(estado, "disabled");
 				
 			} else {
+				request.removeAttribute("estado");
 				response.sendRedirect("Proveedores.jsp?men=Fallo al actualizar.");
 			}
 			
@@ -143,6 +147,7 @@ public class Proveedores extends HttpServlet {
 				request.removeAttribute("direccion_proveedor");
 				request.removeAttribute("nombre_proveedor");
 				request.removeAttribute("telefono_proveedor");
+				request.removeAttribute("estado");
 			}
 			
 	

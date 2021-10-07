@@ -42,7 +42,7 @@ if(request.getAttribute("cedula") != null){
     </section>
 <form action="Clientes" method="post" id="cliente">
     <section class="form-login">
-        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
+        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%if(request.getAttribute("cedula") != null){out.print(estado);}%> required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
         <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo" required>
         <input class="controls" type="text" name="direccion" value="<%if(request.getAttribute("cedula") != null){out.print(direccion);}%>" placeholder="Dirección" required>
@@ -50,7 +50,7 @@ if(request.getAttribute("cedula") != null){
         <input class="controls" type="text" name="telefono" value="<%if(request.getAttribute("cedula") != null){out.print(telefono);}%>" placeholder="Teléfono" required>
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>"placeholder="Correo Electrónico" required>
 
-        <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
+        <input class="buttons" type="submit" name="insertar" value="Crear" <%if(request.getAttribute("cedula") != null){out.print(estado);}%> >
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
         <input class="buttons" type="submit" name="borrar" value="Borrar">
         <%

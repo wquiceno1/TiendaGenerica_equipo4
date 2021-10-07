@@ -51,6 +51,7 @@ public class Clientes extends HttpServlet {
 					correo = request.getParameter("correo");
 					direccion = request.getParameter("direccion");
 					telefono = request.getParameter("telefono");
+					request.removeAttribute("estado");
 
 					// cargar las variables al nuevo objeto
 					ClienteDTO cliente = new ClienteDTO(cedula, direccion, correo, nombre, telefono);
@@ -68,6 +69,7 @@ public class Clientes extends HttpServlet {
 					request.removeAttribute("correo");
 					request.removeAttribute("direccion");
 					request.removeAttribute("telefono");
+					request.removeAttribute("estado");
 				}
 				
 				// validar si se presiono boton consultar
@@ -81,6 +83,7 @@ public class Clientes extends HttpServlet {
 						request.setAttribute("correo", cliente.getEmail_cliente());
 						request.setAttribute("direccion", cliente.getDireccion_cliente());
 						request.setAttribute("telefono", cliente.getTelefono_cliente());
+						request.setAttribute("estado", "disabled");
 						rd.forward(request, response);
 					} else {						
 						response.sendRedirect("Cliente.jsp?men=El cliente no existe.");
@@ -92,7 +95,7 @@ public class Clientes extends HttpServlet {
 
 				if (request.getParameter("actualizar") != null) {
 					int cedula;
-					String nombre, correo, direccion, telefono, estado = "";
+					String nombre, correo, direccion, telefono;
 
 					// cargar la info del formulario a las variables
 					cedula = Integer.parseInt(request.getParameter("cedula"));
@@ -107,10 +110,11 @@ public class Clientes extends HttpServlet {
 					
 					// insertar el nuevo usuario
 					if (clienteDao.actualizar_cliente(cliente)) {
+						request.removeAttribute("estado");
 						response.sendRedirect("Cliente.jsp?men=Cliente actualizado exitosamente.");
-						request.setAttribute(estado, "disabled");
+						//request.setAttribute(estado, "disabled");
 					} else {
-						
+						request.removeAttribute("estado");
 						response.sendRedirect("Cliente.jsp?men=Error al actualizar cliente");
 						
 					}
@@ -143,6 +147,7 @@ public class Clientes extends HttpServlet {
 						request.removeAttribute("correo");
 						request.removeAttribute("direccion");
 						request.removeAttribute("telefono");
+						request.removeAttribute("estado");
 					}
 					
 					
