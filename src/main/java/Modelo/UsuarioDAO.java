@@ -7,6 +7,9 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Controlador.Conexion;
 
 public class UsuarioDAO {
@@ -101,6 +104,28 @@ public class UsuarioDAO {
 		}
 		
 		return resul;
+	}
+	
+	public List listar() {
+		ArrayList<UsuarioDTO> list = new ArrayList<>();
+		String sql = "select * from usuarios";
+		try {
+			ps = conec.prepareStatement(sql);
+			res = ps.executeQuery();
+			while(res.next()) {
+				UsuarioDTO user = new UsuarioDTO();
+				user.setCedula_usuario(res.getInt("cedula_usuario"));
+				user.setEmail_usuario(res.getString("email_usuario"));
+				user.setNombre_usuario(res.getString("nombre_usuario"));
+				user.setPassword(res.getString("password"));
+				user.setUsuario(res.getString("usuario"));
+				list.add(user);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return list;
 	}
 	
 	

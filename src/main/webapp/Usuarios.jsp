@@ -6,6 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Usuarios Tienda Génerica</title>
 <link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<script type="text/javascript" src="./botones.js"></script>
 </head>
 <body>
  <header>
@@ -14,7 +15,7 @@
     
 <%!
 int cedula;
-String nombre = "", correo = "", usuario = "", clave = "", estado = "";
+String nombre = "", correo = "", usuario = "", clave = "", estado = "", estadob = "disabled";
 %>
 <%
 
@@ -23,8 +24,12 @@ if(request.getAttribute("cedula") != null){
 	nombre = String.valueOf(request.getAttribute("nombre"));
 	correo = String.valueOf(request.getAttribute("correo"));
 	usuario = String.valueOf(request.getAttribute("usuario"));
-	clave = String.valueOf(request.getAttribute("clave"));
+	clave = String.valueOf(request.getAttribute("clave"));	
 	estado = String.valueOf(request.getAttribute("estado"));
+	estadob = String.valueOf(request.getAttribute("estadob"));
+	
+} else {
+	
 }
 
 
@@ -32,25 +37,25 @@ if(request.getAttribute("cedula") != null){
     <nav>
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
         <a href="Cliente.jsp" class="MenuH">Clientes</a>
-        <a href="Proveedores.jsp" class="MenuH">Proveedores</a><!-- pendiente de crear el enlace -->
-        <a href="Productos.jsp" class="MenuH">Productos</a><!-- pendiente de crear el enlace -->
-        <a href="Ventas.jsp" class="MenuH">Ventas</a><!-- pendiente de crear el enlace -->
-        <a href="Reportes.jsp" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
+        <a href="Proveedores.jsp" class="MenuH">Proveedores</a>
+        <a href="Productos.jsp" class="MenuH">Productos</a>
+        <a href="Ventas.jsp" class="MenuH">Ventas</a>
+        <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
-   <form action="Usuarios" method="post" id="usuarios">
+   <form action="Usuarios" method="post" id="usuarios" name="formulario" onformchange="mostrar()">
     <section class="form-login">
-        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%=estado %> required>
+        <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%if(request.getAttribute("cedula") != null){out.print(estado);}%>  required>
         <input type="hidden" name="ced" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>">
-        <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo" required>
+        <input class="controls" type="text" name="nombre" value="<%if(request.getAttribute("cedula") != null){out.print(nombre);}%>"  placeholder="Nombre completo" required">
         <input class="controls" type="email" name="correo" value="<%if(request.getAttribute("cedula") != null){out.print(correo);}%>" placeholder="Correo Electrónico" required>
 
         <input class="controls" type="text" name="usuario" value="<%if(request.getAttribute("cedula") != null){out.print(usuario);}%>" placeholder="Usuario" required>
         <input class="controls" type="password" name="clave" value="<%if(request.getAttribute("cedula") != null){out.print(clave);}%>"placeholder="Contraseña" required>
 
         
-        <input class="buttons" type="submit" name="insertar" value="Crear" <%=estado %>>
+        <input class="buttons" type="submit" name="insertar" value="Crear" <%if(request.getAttribute("cedula") != null){out.print(estado);}%>>
         <input class="buttons" type="submit" name="actualizar" value="Actualizar">
-        <input class="buttons" type="submit" name="borrar" value="Borrar" <%=estado %>>
+        <input class="buttons" type="submit" name="borrar" id="borrar" value="Borrar" >
         
         <%
 			if(request.getParameter("men")!=null){
@@ -66,12 +71,12 @@ if(request.getAttribute("cedula") != null){
 
 <legend>Consultar Usuario:</legend>
 
-	<form action="Usuarios" method="post">
+	<form action="Usuarios" method="post" name="consul" >
 	
 	<div> 
 		<label>Cédula:</label>
-		<input class="Use" type="text" name="act_cedula" required>
-		<input class="button" type="submit" name="consultar" value="Consultar">
+		<input class="Use" type="text" name="act_cedula" required onclick="ocultar()">
+		<input class="button" type="submit" name="consultar" value="Consultar" id="consultar" >
 	</div>
 	
 	</form>
