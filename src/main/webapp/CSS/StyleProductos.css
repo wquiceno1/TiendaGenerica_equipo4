@@ -1,4 +1,3 @@
-@charset "ISO-8859-1";
 * {
     margin: 0;
     padding: 0;
@@ -6,59 +5,70 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 body {
+    margin: 0;
     font-family: Bodoni MT;
-    background: rgb(21, 100, 94);
-}
-header {
-    margin: 0px;
+    min-height: 100vh;
+    background-image: url(../Imagenes/productosdelcampo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    background-attachment: fixed;
 }
 
 nav{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0px;
     padding: -1px;
     border-radius: 5px ;
+    margin-top: -8%;
+    width: auto;
+    height: 100px;
+    margin-left: 10%;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+} 
+
+header{
+    background:  #d6c6c6;
+    opacity: 10;
+    margin-left: 0%;;
+    margin-top: auto;
 }
 
 .MenuH {
+    display: block;
     display: inline-block;
-    margin: 5px;
-    background-color:#203438;
     color: black;
-    height: 50px;
-    text-decoration: none;
-    color: rgb(247, 245, 247);
-    font-size: 20px;
-    width: 160px;
+    font-size: 22px;
     text-align: center;
-    padding: 8px;
-    border-bottom: 2px solid;
     overflow: hidden;
-    border-radius: 7px;   
+    border-radius: 7px; 
+    margin-left: 8%;  
+    margin-top: 3%;
 }
 .MenuH:hover{
-    background-color: #3cb1c0;
-    color: black;
+    
+    color: rgb(15, 165, 202);
 }
+
 
 fieldset{
 	width: 700px;
 	height: 150px;
 	margin-left: 300px;
-	margin-top: 200px;
 	box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 0px;
     border-top: 4px solid #017bab;
     color: black;
+    background-color: rgb(21, 100, 94);
+    opacity: 0.9;
+	margin-top: 10%;
+    margin-left: 500px;
  
 }
-legend{
-	font-size:21px;
-	color: white;
-    margin-left: 190px;
 
-	}
 form {
     margin-top: -20px;
     margin-left: 20px;
@@ -93,7 +103,7 @@ form {
 }
 
 .form-login{
-    margin-left: 550px;
+    margin-left: 750px;
     margin-top: 0px;
 }
 
