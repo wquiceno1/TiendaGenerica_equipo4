@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="CSS/StyleLogin.css">
 </head>
 <body>
+     <h1>Bienvenido</h1>
   <section class="form-login">
-            <h5>Bienvenidos a la Tienda Genérica</h5>
             <form action="Login" method="post">
             <input class="controls" type="text" name="usuario" placeholder="Usuario" >
             <input class="controls" type="password" name="clave" placeholder="Contraseña">

@@ -7,27 +7,37 @@
   
   body {
       font-family: arial;
-      background: rgb(21, 100, 94);
+      background-image: url(../Imagenes/paginaweb.jpg);
+  }
+  h1 {
+    font-family: ravie;
+    color: #203438;
+    text-decoration: none;
+    font-size: 26px; 
+    text-align: center;
+    margin-top: 40px;
+    fill-opacity: initial;
   }
   
- .form-login{
+  .form-login{
+      background-color: rgb(21, 100, 94);
+      opacity: 0.7;
       width: 400px;
       height: 300px;
       margin: auto;
-      margin-top: 150px;
+      margin-top: 20px;
       box-shadow: 4px 9px 20px rgb(41, 38, 38);
       padding: 20px 30px;
       border-top: 5px solid #3cb1c0;
       color: rgb(88, 88, 23);
   }
   
-.form-login h5 {
+  .form-login h5 {
       color: white;
       text-decoration: none;
       font-size: 18px; 
       text-align: center;
   }
-  
   
   .controls{
       width: 100%;
