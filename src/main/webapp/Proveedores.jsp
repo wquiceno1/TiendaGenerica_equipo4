@@ -28,7 +28,7 @@
 %>
 
 	<header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
+        <img src="Imagenes/tiendita.png" alt="Encabezado">
     </header>
 
     <nav>
