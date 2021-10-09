@@ -56,7 +56,7 @@
 			
 	        <input class="buttons" type="submit" name="insertar" value="Crear" <%if(request.getAttribute("nitproveedor") != null){out.print(estado);}%> >
 	        <input class="buttons" type="submit" name="actualizar" value="Actualizar" >
-	        <input class="buttons" type="submit" name="borrar" value="Borrar" >
+	        <input class="buttons" type="submit" name="borrar" value="Borras" >
 	        
 	        <%
 	        	if(request.getParameter("men")!=null){
