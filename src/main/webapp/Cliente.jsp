@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Módulo Clientes</title>
-<link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<link rel='stylesheet'  href="CSS/StyleClientes.css">
 </head>
 <body>
 <header>
@@ -37,10 +37,6 @@ if(request.getAttribute("cedula") != null){
         <a href="Reportes.jsp" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
     </nav>
     
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/wquiceno1/TiendaGenerica_equipo4.git
 <form action="Clientes" method="post" id="cliente">
     <section class="form-login">
         <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%if(request.getAttribute("cedula") != null){out.print(estado);}%> required>

@@ -56,8 +56,8 @@ header{
 .form-login{
     width: 500px;
     height: 400px;
-    margin-left: 420px;
-    margin-top: 27%;
+    margin-left: 460px;
+    margin-top: 30%;
     box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 20px 30px;
     border-top: 4px solid #017bab; 
@@ -102,8 +102,8 @@ header{
 fieldset{
 	width: 600px;
 	height: 150px;
-	margin-left: 380px;
-	margin-top: -48%;
+	margin-left: 420px;
+	margin-top: -50%;
 	box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 0px;
     border-top: 4px solid #017bab;
@@ -113,7 +113,7 @@ fieldset{
 }
 
 legend{
-	font-size:21px;
+	font-size:22px;
 	color: rgb(10, 10, 10);
     margin-left: 220px;
 
