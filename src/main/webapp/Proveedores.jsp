@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Proveedores Tienda Genérica</title>
-<link rel='stylesheet'  href="CSS/StyleUsuarios.css">
+<link rel='stylesheet'  href="CSS/StyleProveedores.css">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 %>
 
 	<header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
+        <img src="Imagenes/tiendita.png" alt="Encabezado">
     </header>
 
     <nav>
@@ -56,7 +56,7 @@
 			
 	        <input class="buttons" type="submit" name="insertar" value="Crear" <%if(request.getAttribute("nitproveedor") != null){out.print(estado);}%> >
 	        <input class="buttons" type="submit" name="actualizar" value="Actualizar" >
-	        <input class="buttons" type="submit" name="borrar" value="Borrar" >
+	        <input class="buttons" type="submit" name="borrar" value="Borras" >
 	        
 	        <%
 	        	if(request.getParameter("men")!=null){

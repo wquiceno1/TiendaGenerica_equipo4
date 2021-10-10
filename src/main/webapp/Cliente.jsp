@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="Encabezado">
+        <img src="Imagenes/tiendita.png" alt="Encabezado">
  </header>
 <%!
 int cedula;
@@ -37,9 +37,7 @@ if(request.getAttribute("cedula") != null){
         <a href="Reportes.jsp" class="MenuH">Reportes</a><!-- pendiente de crear el enlace -->
     </nav>
     
-    <section>
-        <img class="imagen" src="Imagenes/Clientes.jpg"alt="Cliente">
-    </section>
+
 <form action="Clientes" method="post" id="cliente">
     <section class="form-login">
         <input class="controls" type="number" name="cedula" value="<%if(request.getAttribute("cedula") != null){out.print(cedula);}%>" placeholder="Cédula" <%if(request.getAttribute("cedula") != null){out.print(estado);}%> required>
