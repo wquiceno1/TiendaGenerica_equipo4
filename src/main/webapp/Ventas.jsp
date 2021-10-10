@@ -8,9 +8,8 @@
 <link rel='stylesheet'  href="CSS/StyleVentas.css">
 </head>
 <body>
-
-    <header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="encabezado">
+ <header>
+        <img src="Imagenes/tiendita.png" alt="encabezado">
     </header>
     
     <nav>
@@ -35,10 +34,9 @@
 	        
         </form>
     </fieldset>
-    
-    <fieldset>
+   
 	    <form class="formulario2">
-	    
+
 	        <div>
 	            <label class="codProd">Cod. Producto:</label>
 	            <input class="UseCod" type="text" name="cod.producto" >
@@ -52,6 +50,7 @@
 	            <input class="NProducto" type="text" name="cod.producto" >
 	        </div>
 	        <div>
+                <label class="NombrePr">Cantidad de Prod:</label>
 	            <input class="NomProductos" type="text" name="cod.producto" >
 	        </div>
 	        
@@ -60,19 +59,13 @@
 	            <input class="UseTotal" type="text" name="cod.producto" >
 	        </div>
 	        <div>
-	        	<input class="buttonss" type="submit" name="" value="Siguiente prod.">
+	        	<input class="buttons" type="submit" name="" value="Siguiente prod.">
 	            <input class="buttonss" type="submit" name="" value="Terminar Compra">
 	        </div>
 	        <div>
+                <label class="prodf">Total Venta:</label>
 	            <input class="NombreSon" type="text" name="cod.producto" >
 	        </div>
-	        <div>
-	        	<label class="prodf">Total Venta:</label>
-	        </div>
-
-	        
 	    </form>
-    </fieldset>
-      
 </body>
 </html>
