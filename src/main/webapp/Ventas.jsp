@@ -28,11 +28,9 @@
 	        <div> 
 	            <label>Cédula:</label>
 	            <input class="Use" type="text" name="act_cedula" required>
-	            <input class="button" type="submit" name="consultar" value="Consultar">
+	            <input class="button" type="submit" name="consultar" value="Consultar" >
 	            <label>Cliente:</label>
 	            <input class="Use" type="text" name="act_cliente" disabled>
-	            <label>Consec.:</label>
-	            <input class="Use" type="text" name="act_consec" disabled>   
 	        </div>
 	        
         </form>
@@ -44,48 +42,34 @@
 	        <div>
 	            <label class="codProd">Cod. Producto:</label>
 	            <input class="UseCod" type="text" name="cod.producto" >
-	            <input class="UseCod" type="text" name="cod.producto" >
-	            <input class="UseCod" type="text" name="cod.producto" >
 	        
 	            <input class="NombreS" type="submit" name="" value="Consultar">
-	            <input class="buttons" type="submit" name="" value="Consultar">
-	            <input class="buttons" type="submit" name="" value="Consultar">
 	        </div>
 	        
 	        <div>
 	            <label class="NombreP">Nombre Producto:</label>
 	
 	            <input class="NProducto" type="text" name="cod.producto" >
-	            <input class="NProducto" type="text" name="cod.producto" >
-	            <input class="NProducto" type="text" name="cod.producto" >
 	        </div>
 	        <div>
 	            <input class="NomProductos" type="text" name="cod.producto" >
-	            <input class="NomProducto" type="text" name="cod.producto" >
-	            <input class="NomProducto" type="text" name="cod.producto" >
 	        </div>
 	        
 	        <div>
 	            <label class="prodVenta">Valor Total:</label>
 	            <input class="UseTotal" type="text" name="cod.producto" >
-	            <input class="UseTotal" type="text" name="cod.producto" >
-	            <input class="UseTotal" type="text" name="cod.producto" >
 	        </div>
 	        <div>
-	            <input class="buttonss" type="submit" name="" value="Confirmar">
+	        	<input class="buttonss" type="submit" name="" value="Siguiente prod.">
+	            <input class="buttonss" type="submit" name="" value="Terminar Compra">
 	        </div>
 	        <div>
-	        
 	            <input class="NombreSon" type="text" name="cod.producto" >
-	            <input class="UseProducto" type="text" name="cod.producto" >
-	            <input class="UseProducto" type="text" name="cod.producto" >
 	        </div>
-	        
 	        <div>
-	            <label class="prodf">Total Venta:</label>
-	            <label class="prod">Nombre Producto:</label>
-	            <label class="prod">Nombre Producto:</label>  
+	        	<label class="prodf">Total Venta:</label>
 	        </div>
+
 	        
 	    </form>
     </fieldset>
