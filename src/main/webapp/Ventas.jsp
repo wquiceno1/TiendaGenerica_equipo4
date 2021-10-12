@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="Controlador.Ventas" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,12 @@
  <header>
         <img src="Imagenes/tiendita.png" alt="encabezado">
     </header>
+
+<%Ventas venta=new Ventas();
+int codigo_producto=0;
+String NombrePro=null;
+double Res[]={0,0};%>
+
     
     <nav>
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>
@@ -21,51 +28,102 @@
         <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>
     
-    <fieldset class="formulario1">
-        <form action="Cliente" method="post">
+   
+        <form class="formulario1">
         
 	        <div> 
 	            <label>Cédula:</label>
 	            <input class="Use" type="text" name="act_cedula" required>
-	            <input class="button" type="submit" name="consultar" value="Consultar" >
+	            <input class="button" type="submit" name="consultar" value="Consultar"  >
+	            
 	            <label>Cliente:</label>
-	            <input class="Use" type="text" name="act_cliente" disabled>
+	            
+	            <%
+	            	if (request.getParameter("consultar")!=null){
+	            		String Nombre=venta.Consultar_cliente(Integer.parseInt(request.getParameter("act_cedula")));
+	            		if (Nombre!=null){
+	            			out.write(Nombre);
+	            		}else{
+	            			
+	            			out.write(Nombre);
+	            		}
+	            	}
+	            	else{
+	            		//request.setAttribute("act_cliente", "El cliente no existe");
+	            	}
+	            %>
+	            
+	            
 	        </div>
 	        
         </form>
-    </fieldset>
+ 
    
 	    <form class="formulario2">
 
 	        <div>
 	            <label class="codProd">Cod. Producto:</label>
-	            <input class="UseCod" type="text" name="cod.producto" >
-	        
-	            <input class="NombreS" type="submit" name="" value="Consultar">
+	            <input class="NombreS" type="submit" name="Consultar_prod" value="Consulta prod.">
+	            <%
+	            	if (request.getParameter("Consultar_prod")!=null){
+	            		codigo_producto=Integer.parseInt(request.getParameter("cod.producto"));
+	            		NombrePro=venta.Consultar_producto(Integer.parseInt(request.getParameter("cod.producto")));
+	            		
+	            	}else{
+	            		request.setAttribute("cod.producto", "El producto no existe");
+	            	}
+	            %>
+	            <input class="UseCod" type="text" name="cod.producto" value=<%if (request.getParameter("Consultar_prod")!=null){out.print(codigo_producto);} %>>
 	        </div>
 	        
 	        <div>
 	            <label class="NombreP">Nombre Producto:</label>
 	
-	            <input class="NProducto" type="text" name="cod.producto" >
+	            <input class="NProducto" type="text" name="Nom.producto" value=<%if (request.getParameter("Consultar_prod")!=null){out.print(NombrePro);} %>>
 	        </div>
 	        <div>
                 <label class="NombrePr">Cantidad de Prod:</label>
-	            <input class="NomProductos" type="text" name="cod.producto" >
+	            <input class="NomProductos" type="text" name="Can.producto" >
 	        </div>
 	        
 	        <div>
-	            <label class="prodVenta">Valor Total:</label>
-	            <input class="UseTotal" type="text" name="cod.producto" >
+	            
+	            <label class=null>Cedula:</label>
+	            <input class=null type="text" name="Cedula">
 	        </div>
 	        <div>
-	        	<input class="buttons" type="submit" name="" value="Siguiente prod.">
-	            <input class="buttonss" type="submit" name="" value="Terminar Compra">
+	        	<input class="buttons" type="submit" name="Siguiente_comp" value="Siguiente prod.">
+	            <input class="buttonss" type="submit" name="Terminar_comp" value="Terminar Compra">
+	            <%
+		            int i=0;
+	            	int canPro=0;
+	            	int Cedula=0;
+	            	int codigoPro=0;
+		            if(request.getParameter("Terminar_comp")!=null){
+	        			i=3;
+	        			codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
+	        			Cedula=Integer.parseInt(request.getParameter("Cedula"));
+	            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
+	        		}
+	            	if (request.getParameter("Siguiente_comp")!=null){
+	            		i=1;
+	            		codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
+	            		Cedula=Integer.parseInt(request.getParameter("Cedula"));
+	            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
+	            	}
+	            	if (i==1 || i==3){
+	            		Res=venta.Guardar_Datos(codigoPro,Cedula,canPro,i);
+	            	}
+	            %>
 	        </div>
 	        <div>
+	        	<label class="prodVenta">Valor Total:</label>
+	            <input class="UseTotal" type="text" name="V.producto" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)){out.print(Res[0]);} %>>
                 <label class="prodf">Total Venta:</label>
-	            <input class="NombreSon" type="text" name="cod.producto" >
+	            <input class="NombreSon" type="text" name="TOTAL" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)){out.print(Res[1]);} %>>
+	            
 	        </div>
 	    </form>
+	    
 </body>
 </html>

@@ -138,7 +138,7 @@ form {
     background: #1c3338;
     box-shadow: 0 0 2px #eed6f3, 0 0 5px #eed6f3, 0 0 5px #eed6f3; 
 }
-.NombresS:hover{
+.NombreS:hover{
     background:  #3cb1c0;
     color: rgb(102, 48, 48);
 }

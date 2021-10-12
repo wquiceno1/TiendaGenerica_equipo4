@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Controlador.Conexion;
+import Modelo.ClienteDTO;
 
 
 
@@ -26,7 +27,7 @@ public class VentasDAO{
 	public VentasDTO BuscarVentas(int codigo_ventas) {
 		VentasDTO venta=null;
 		try {
-			String sql="SELECT * FROM ventas if codigo_ventas=?";
+			String sql="SELECT * FROM ventas WHERE codigo_venta=?";
 			ps=conec.prepareStatement(sql);
 			ps.setInt(1, codigo_ventas);
 			res=ps.executeQuery();
@@ -46,7 +47,7 @@ public class VentasDAO{
 	public VentasDetalleDTO BuscarDetalleVentas(int codigo_detalle_ventas) {
 		VentasDetalleDTO DetalleVenta=null;
 		try {
-			String sql="SELECT * FROM detalle_ventas if codigo_detalle_ventas=?";
+			String sql="SELECT * FROM detalle_ventas WHERE codigo_detalle_venta=?";
 			ps=conec.prepareStatement(sql);
 			ps.setInt(1, codigo_detalle_ventas);
 			res=ps.executeQuery();
@@ -62,16 +63,17 @@ public class VentasDAO{
 	
 	//AGREGAR VENTA
 	
-	public boolean AgregarVentas(VentasDTO ventas) {
+	public boolean AgregarVentas(VentasDTO ventas,ClienteDTO cliente,UsuarioDTO usuario) {
 		boolean resul = false;
 		VentasDTO ventaEx = null;
 		try {
 			ventaEx = BuscarVentas(ventas.getCodigo_venta());
 			if(ventaEx == null) {
-				String sql ="insert into ventas values(?,?,?,?,?)";
+				String sql ="insert into ventas values(?,?,?,?,?,?)";
 				ps = conec.prepareStatement(sql);
-				ps.setInt(2, ventas.getCedula_cliente());
-				ps.setInt(3, ventas.getCedula_usuario());
+				ps.setInt(1, ventas.getCodigo_venta());
+				ps.setInt(2, cliente.getCedula_cliente());
+				ps.setInt(3, usuario.getCedula_usuario());
 				ps.setDouble(4, ventas.getIvaventa());
 				ps.setDouble(5, ventas.getTotal_venta());
 				ps.setDouble(6, ventas.getValor_venta());
@@ -86,98 +88,28 @@ public class VentasDAO{
 	}
 	
 	//AGREGAR DETALLES VENTA
-	public boolean AgregarDetallesVentas(VentasDetalleDTO ventasDetalle) {
+	public boolean AgregarDetallesVentas(VentasDetalleDTO ventasDetalle, VentasDTO ventas, ProductosDTO productos) {
 		boolean resul = false;
 		VentasDetalleDTO ventaDetalleEx = null;
 		try {
 			ventaDetalleEx = BuscarDetalleVentas(ventasDetalle.getCodigo_detalle_venta());
 			if(ventaDetalleEx == null) {
-				String sql ="insert into detalle_ventas values(?,?,?,?,?,?)";
+				String sql ="insert into detalle_ventas values(?,?,?,?,?,?,?)";
 				ps = conec.prepareStatement(sql);
-				ps.setInt(2, ventasDetalle.getCantidad_producto());
-				ps.setInt(3, ventasDetalle.getCodigo_producto());
-				ps.setInt(4, ventasDetalle.getCodigo_venta());
-				ps.setDouble(5, ventasDetalle.getValor_total());
-				ps.setDouble(6, ventasDetalle.getValor_venta());
-				ps.setDouble(7, ventasDetalle.getValoriva());
+				ps.setInt(1, ventasDetalle.getCantidad_producto());
+				ps.setInt(2, productos.getCodigo_productos());
+				ps.setInt(3, ventas.getCodigo_venta());
+				ps.setDouble(4, ventas.getValor_venta());
+				ps.setDouble(5, ventas.getTotal_venta());
+				ps.setDouble(6, ventas.getIvaventa());
+				ps.setDouble(7, ventasDetalle.getCodigo_detalle_venta());
 				resul = ps.executeUpdate() > 0;
 			} else {
 				JOptionPane.showMessageDialog(null, "La venta ya existe.");
 			}
 		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al insertar cliente... "+ex);
-		}
-		return resul;
-	}	
-	
-	//ACTUALIZAR VENTAS
-	
-	public boolean actualizarVentas(VentasDTO venta) {
-		boolean resul = false;
-		try {
-			String sql ="UPDATE ventas SET  WHERE cedula_cliente=?";
-			ps = conec.prepareStatement(sql);
-			ps.setInt(2, venta.getCedula_cliente());
-			ps.setInt(3, venta.getCedula_usuario());
-			ps.setDouble(4, venta.getIvaventa());
-			ps.setDouble(5, venta.getTotal_venta());
-			ps.setDouble(6, venta.getValor_venta());
-			resul = ps.executeUpdate() > 0;
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al actualizar la venta... "+ex);
+			JOptionPane.showMessageDialog(null, "Error al insertar la info0... "+ex);
 		}
 		return resul;
 	}
-	
-	//ACTUALIZAR VENTAS DETALLES
-	
-	public boolean actualizarDetalleVentas(VentasDetalleDTO ventaDetalle) {
-		boolean resul = false;
-		try {
-			String sql ="UPDATE detalle_ventas SET  WHERE cedula_cliente=?";
-			ps = conec.prepareStatement(sql);
-			ps.setInt(2, ventaDetalle.getCantidad_producto());
-			ps.setInt(3, ventaDetalle.getCodigo_producto());
-			ps.setInt(4, ventaDetalle.getCodigo_venta());
-			ps.setDouble(5, ventaDetalle.getValor_total());
-			ps.setDouble(6, ventaDetalle.getValor_venta());
-			ps.setDouble(7, ventaDetalle.getValoriva());
-			resul = ps.executeUpdate() > 0;
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al actualizar la venta... "+ex);
-		}
-		return resul;
-	}
-	
-	//ELIMINAR VENTAS
-	
-	public boolean eliminarVentas(int codigo_venta) {
-		boolean resul = false;
-		try {
-			String sql ="DELETE FROM ventas WHERE cedula_cliente=?";
-			ps = conec.prepareStatement(sql);
-			ps.setInt(1, codigo_venta);
-			resul = ps.executeUpdate() > 0;
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al eliminar la venta... "+ex);
-		}
-		return resul;
-	}
-	
-	//ELIMINAR VENTAS DETALLES
-	
-	public boolean eliminarDetalleVentas(int codigo_detalle_venta) {
-		boolean resul = false;
-		try {
-			String sql ="DELETE FROM detalle_ventas WHERE cedula_cliente=?";
-			ps = conec.prepareStatement(sql);
-			ps.setInt(1, codigo_detalle_venta);
-			resul = ps.executeUpdate() > 0;
-		} catch (SQLException ex) {
-			JOptionPane.showMessageDialog(null, "Error al eliminar la venta... "+ex);
-		}
-		return resul;
-	}
-	
-	
 }
