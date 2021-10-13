@@ -28,7 +28,7 @@
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css"/>
     <title>Usuarios</title>
-        
+        <link rel='stylesheet'  href="CSS/StylelistaUsuarios.css">
     <script>
         $(document).ready(function() {
             $('#TablaDat').DataTable({
@@ -44,9 +44,8 @@
   </head>
   <body>
   <header>
-  
-  </header>
-
+        <img src="Imagenes/tiendita.png" alt="Encabezado">
+ </header>
     
 
             <div class="container">
