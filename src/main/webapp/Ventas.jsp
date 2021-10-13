@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="Controlador.Ventas" %>
@@ -48,9 +49,6 @@ double Res[]={0,0};%>
 	            			out.write(Nombre);
 	            		}
 	            	}
-	            	else{
-	            		//request.setAttribute("act_cliente", "El cliente no existe");
-	            	}
 	            %>
 	            
 	            
@@ -66,24 +64,30 @@ double Res[]={0,0};%>
 	            <input class="NombreS" type="submit" name="Consultar_prod" value="Consulta prod.">
 	            <%
 	            	if (request.getParameter("Consultar_prod")!=null){
-	            		codigo_producto=Integer.parseInt(request.getParameter("cod.producto"));
-	            		NombrePro=venta.Consultar_producto(Integer.parseInt(request.getParameter("cod.producto")));
 	            		
-	            	}else{
-	            		request.setAttribute("cod.producto", "El producto no existe");
+	            		try{
+	            			codigo_producto=Integer.parseInt(request.getParameter("cod.producto"));
+		            		NombrePro=venta.Consultar_producto(Integer.parseInt(request.getParameter("cod.producto")));
+	            		}catch(Exception e){
+	            			JOptionPane.showMessageDialog(null,"Ha ocurrido un error "+ e,"ERROR",JOptionPane.ERROR_MESSAGE);
+	            		}	
 	            	}
 	            %>
 	            <input class="UseCod" type="text" name="cod.producto" value=<%if (request.getParameter("Consultar_prod")!=null){out.print(codigo_producto);} %>>
 	        </div>
 	        
+	        
+	        
 	        <div>
 	            <label class="NombreP">Nombre Producto:</label>
 	
-	            <input class="NProducto" type="text" name="Nom.producto" value=<%if (request.getParameter("Consultar_prod")!=null){out.print(NombrePro);} %>>
+	            <input class="NProducto" type="text" name="Nom.producto" 
+	            value=<%if (request.getParameter("Consultar_prod")!=null){out.print(NombrePro);}
+	            %>>
 	        </div>
 	        <div>
                 <label class="NombrePr">Cantidad de Prod:</label>
-	            <input class="NomProductos" type="text" name="Can.producto" >
+	            <input class="NomProductos" type="text" name="Can.producto" value=<% %>>
 	        </div>
 	        
 	        <div>
@@ -91,6 +95,8 @@ double Res[]={0,0};%>
 	            <label class=null>Cedula:</label>
 	            <input class=null type="text" name="Cedula">
 	        </div>
+	        
+	        
 	        <div>
 	        	<input class="buttons" type="submit" name="Siguiente_comp" value="Siguiente prod.">
 	            <input class="buttonss" type="submit" name="Terminar_comp" value="Terminar Compra">
@@ -99,30 +105,45 @@ double Res[]={0,0};%>
 	            	int canPro=0;
 	            	int Cedula=0;
 	            	int codigoPro=0;
-		            if(request.getParameter("Terminar_comp")!=null){
-	        			i=3;
-	        			codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
-	        			Cedula=Integer.parseInt(request.getParameter("Cedula"));
-	            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
-	        		}
-	            	if (request.getParameter("Siguiente_comp")!=null){
-	            		i=1;
-	            		codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
-	            		Cedula=Integer.parseInt(request.getParameter("Cedula"));
-	            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
-	            	}
-	            	if (i==1 || i==3){
-	            		Res=venta.Guardar_Datos(codigoPro,Cedula,canPro,i);
-	            	}
+	            	try{
+	            		if(request.getParameter("Consultar_prod")!=null){
+	            			Res[0]=Double.parseDouble(request.getParameter("V.producto"));
+	            			Res[1]=Double.parseDouble(request.getParameter("TOTAL"));
+	            		}
+			            if(request.getParameter("Terminar_comp")!=null){
+		        			i=3;
+		        			codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
+		        			Cedula=Integer.parseInt(request.getParameter("Cedula"));
+		            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
+		        		}
+		            	if (request.getParameter("Siguiente_comp")!=null){
+		            		i=1;
+		            		codigoPro=Integer.parseInt(request.getParameter("cod.producto"));
+		            		Cedula=Integer.parseInt(request.getParameter("Cedula"));
+		            		canPro=Integer.parseInt(request.getParameter("Can.producto"));
+		            	}
+		            	if (i==1 || i==3){
+		            		Res=venta.Guardar_Datos(codigoPro,Cedula,canPro,i,Double.parseDouble(request.getParameter("V.producto")),Double.parseDouble(request.getParameter("TOTAL")));
+		            	}
+	            	}catch(Exception e){
+            			JOptionPane.showMessageDialog(null,"Ha ocurrido un error "+ e,"ERROR",JOptionPane.ERROR_MESSAGE);
+            			Res[0]=Double.parseDouble(request.getParameter("V.producto"));
+            			Res[1]=Double.parseDouble(request.getParameter("TOTAL"));
+            		}
 	            %>
-	        </div>
+	        
 	        <div>
 	        	<label class="prodVenta">Valor Total:</label>
-	            <input class="UseTotal" type="text" name="V.producto" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)){out.print(Res[0]);} %>>
+	            <input class="UseTotal" type="text" name="V.producto" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)||(request.getParameter("Consultar_prod")!=null)){out.print(Res[0]);} %> 0>
                 <label class="prodf">Total Venta:</label>
-	            <input class="NombreSon" type="text" name="TOTAL" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)){out.print(Res[1]);} %>>
+	            <input class="NombreSon" type="text" name="TOTAL" value=<%if ((request.getParameter("Terminar_comp")!=null) || (request.getParameter("Siguiente_comp")!=null)||(request.getParameter("Consultar_prod")!=null)){out.print(Res[1]);} %> 0>
 	            
 	        </div>
+	        
+	        
+	        </div>
+	        
+	        
 	    </form>
 	    
 </body>

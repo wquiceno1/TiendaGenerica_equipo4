@@ -74,7 +74,7 @@ public class Ventas /*extends HttpServlet*/ {
 		return NombrePro;
 	}
 	
-	public double[] Guardar_Datos(int Cod_producto,int Ced_cliente,int Can_producto,int i) {
+	public double[] Guardar_Datos(int Cod_producto,int Ced_cliente,int Can_producto,int i,double totalSinIVA,double resultado) {
 		double Res[]= {0,0};
 		try {
 			ProductosDTO productosDat=productosDAO.Buscar_producto(Cod_producto);
@@ -84,9 +84,7 @@ public class Ventas /*extends HttpServlet*/ {
 			int CodigoVentas=ventasDAO.UltimoVentas()+1;
 			int CodigoDetalle=ventasDAO.UltimoDetalleVentas()+1;
 			
-			double totalSinIVA=0;
 			totalSinIVA=totalSinIVA+(productosDat.getPrecio_venta()*Can_producto);
-			double resultado=0;
 			resultado=resultado+(totalSinIVA*(productosDat.getIvacompra()/100))+totalSinIVA;
 			
 			Res[0]=totalSinIVA;
