@@ -22,7 +22,7 @@ public class VentasDAO{
 	PreparedStatement ps = null;
 	ResultSet res = null;
 	
-	//BUSCAR VENTAS
+		//BUSCAR VENTAS
 	
 	public VentasDTO BuscarVentas(int codigo_ventas) {
 		VentasDTO venta=null;
@@ -41,9 +41,44 @@ public class VentasDAO{
 		return venta;
 	}
 	
+	//Revisar el ultimo codigo Detalle_ventas
+	public int UltimoDetalleVentas() {
+		int Codigo=0;
+		try {
+			String sql="select MAX(codigo_detalle_venta) as codigo_detalle_venta from detalle_ventas";
+			ps=conec.prepareStatement(sql);
+			res=ps.executeQuery();
+			if(res.next()) {
+				Codigo=res.getInt(1);
+			}
+		}catch(SQLException e) {
+			JOptionPane.showMessageDialog(null, "Error al consultar "+e);
+		}
+		
+		return Codigo;
+	}
+	
+	//Revisar el ultimo codigo ventas
+		public int UltimoVentas() {
+			int Codigo=0;
+			try {
+				String sql="select MAX(codigo_venta) as codigo_venta from ventas;";
+				ps=conec.prepareStatement(sql);
+				res=ps.executeQuery();
+				if(res.next()) {
+					Codigo=res.getInt(1);
+				}
+			}catch(SQLException e) {
+				JOptionPane.showMessageDialog(null, "Error al consultar "+e);
+			}
+			
+			return Codigo;
+		}
+	
+	
+	
 	
 	//BUSCAR DETALLES VENTAS
-	
 	public VentasDetalleDTO BuscarDetalleVentas(int codigo_detalle_ventas) {
 		VentasDetalleDTO DetalleVenta=null;
 		try {
@@ -52,7 +87,7 @@ public class VentasDAO{
 			ps.setInt(1, codigo_detalle_ventas);
 			res=ps.executeQuery();
 			while(res.next()) {
-				DetalleVenta=new VentasDetalleDTO(res.getInt(1),res.getInt(2),res.getInt(3),res.getInt(4),res.getDouble(5),res.getDouble(6),res.getDouble(7));
+				DetalleVenta=new VentasDetalleDTO(res.getInt(7),res.getInt(1),res.getInt(2),res.getInt(3),res.getDouble(4),res.getDouble(5),res.getDouble(6));
 			}
 		}
 		catch(SQLException e) {
@@ -63,7 +98,7 @@ public class VentasDAO{
 	
 	//AGREGAR VENTA
 	
-	public boolean AgregarVentas(VentasDTO ventas,ClienteDTO cliente,UsuarioDTO usuario) {
+	public boolean AgregarVentas(VentasDTO ventas) {
 		boolean resul = false;
 		VentasDTO ventaEx = null;
 		try {
@@ -72,8 +107,8 @@ public class VentasDAO{
 				String sql ="insert into ventas values(?,?,?,?,?,?)";
 				ps = conec.prepareStatement(sql);
 				ps.setInt(1, ventas.getCodigo_venta());
-				ps.setInt(2, cliente.getCedula_cliente());
-				ps.setInt(3, usuario.getCedula_usuario());
+				ps.setInt(2, ventas.getCedula_cliente());
+				ps.setInt(3, ventas.getCedula_usuario());
 				ps.setDouble(4, ventas.getIvaventa());
 				ps.setDouble(5, ventas.getTotal_venta());
 				ps.setDouble(6, ventas.getValor_venta());
@@ -88,25 +123,20 @@ public class VentasDAO{
 	}
 	
 	//AGREGAR DETALLES VENTA
-	public boolean AgregarDetallesVentas(VentasDetalleDTO ventasDetalle, VentasDTO ventas, ProductosDTO productos) {
+	public boolean AgregarDetallesVentas(VentasDetalleDTO ventasDetalle) {
 		boolean resul = false;
 		VentasDetalleDTO ventaDetalleEx = null;
 		try {
-			ventaDetalleEx = BuscarDetalleVentas(ventasDetalle.getCodigo_detalle_venta());
-			if(ventaDetalleEx == null) {
 				String sql ="insert into detalle_ventas values(?,?,?,?,?,?,?)";
 				ps = conec.prepareStatement(sql);
 				ps.setInt(1, ventasDetalle.getCantidad_producto());
-				ps.setInt(2, productos.getCodigo_productos());
-				ps.setInt(3, ventas.getCodigo_venta());
-				ps.setDouble(4, ventas.getValor_venta());
-				ps.setDouble(5, ventas.getTotal_venta());
-				ps.setDouble(6, ventas.getIvaventa());
-				ps.setDouble(7, ventasDetalle.getCodigo_detalle_venta());
+				ps.setInt(2, ventasDetalle.getCodigo_producto());
+				ps.setInt(3, ventasDetalle.getCodigo_venta());
+				ps.setDouble(4, ventasDetalle.getValor_total());
+				ps.setDouble(5, ventasDetalle.getValor_venta());
+				ps.setDouble(6, ventasDetalle.getValoriva());
+				ps.setInt(7, ventasDetalle.getCodigo_detalle_venta());
 				resul = ps.executeUpdate() > 0;
-			} else {
-				JOptionPane.showMessageDialog(null, "La venta ya existe.");
-			}
 		} catch (SQLException ex) {
 			JOptionPane.showMessageDialog(null, "Error al insertar la info0... "+ex);
 		}

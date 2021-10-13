@@ -80,26 +80,29 @@ public class Ventas /*extends HttpServlet*/ {
 			ProductosDTO productosDat=productosDAO.Buscar_producto(Cod_producto);
 			ClienteDTO clienteDat=clienteDAO.buscar_cliente(Ced_cliente);
 			UsuarioDTO usuarioDat =usuarioDAO.buscar_usuario(123);
+			VentasDTO ventasDat=ventasDAO.BuscarVentas(ventasDAO.UltimoVentas());
+			int CodigoVentas=ventasDAO.UltimoVentas()+1;
+			int CodigoDetalle=ventasDAO.UltimoDetalleVentas()+1;
 			
 			double totalSinIVA=0;
 			totalSinIVA=totalSinIVA+(productosDat.getPrecio_venta()*Can_producto);
 			double resultado=0;
-			resultado=resultado+(totalSinIVA*0.19)+totalSinIVA;
-			double iva=totalSinIVA*0.19;
+			resultado=resultado+(totalSinIVA*(productosDat.getIvacompra()/100))+totalSinIVA;
 			
 			Res[0]=totalSinIVA;
 			Res[1]=resultado;
 			
 			if(i==3) {
-				VentasDTO ventasDTO = new VentasDTO(0,0,0,iva,Res[0],Res[1]);
-				VentasDetalleDTO ventasDetalleDTO=new VentasDetalleDTO(0,Can_producto,0,0,0,0,0);
+				VentasDTO ventasDTO = new VentasDTO(CodigoVentas-2,clienteDat.getCedula_cliente(),usuarioDat.getCedula_usuario(),productosDat.getIvacompra(),Res[0],Res[1]);
 				
-				
-				ventasDAO.AgregarVentas(ventasDTO,clienteDat,usuarioDat);
-				
-				ventasDAO.AgregarDetallesVentas(ventasDetalleDTO,ventasDTO,productosDat);
-				
-				
+				ventasDAO.AgregarVentas(ventasDTO);
+			}else {
+			
+			VentasDetalleDTO ventasDetalleDTO=new VentasDetalleDTO(CodigoDetalle,Can_producto,productosDat.getCodigo_productos(),ventasDat.getCodigo_venta(),Res[1],Res[0],productosDat.getIvacompra());
+
+			ventasDAO.AgregarDetallesVentas(ventasDetalleDTO);
+			}
+			if(i==3) {
 				totalSinIVA=0;
 				resultado=0;
 			}
