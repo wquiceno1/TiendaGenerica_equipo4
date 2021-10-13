@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="">
+        <img src="Imagenes/tiendita.png" alt="">
     </header>
     <nav>
         <a href="" class="MenuH">Usuarios</a>

@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <img src="Imagenes/EncabezadoPagina.jpg" alt="">
+        <img src="Imagenes/tiendita.png" alt="encabezado">
     </header>
     <nav>
         <a href="Usuarios.jsp" class="MenuH">Usuarios</a>

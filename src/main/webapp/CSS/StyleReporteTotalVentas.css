@@ -3,106 +3,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    font-family: Bodoni MT;
-    background: rgb(21, 100, 94);
-}
-
-header {
-    margin: 0px;
-    opacity: 0.8;
+    background: white;
+   
 }
 
 nav{
-    margin-left: 13%;
-    margin-right: 50px;
+    margin: 0px;
     padding: -1px;
     border-radius: 5px ;
+    margin-top: -8%;
+    width: auto;
+    height: 100px;
+    margin-left: 10%;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+} 
+
+header{
+    background:  #d6c6c6;
+    opacity: 10;
+    margin-left: 0%;;
+    margin-top: auto;
 }
 
 .MenuH {
+    display: block;
     display: inline-block;
-    margin: 5px;
-    background-color:#203438;
     color: black;
-    height: 50px;
-    text-decoration: none;
-    color: rgb(247, 245, 247);
-    font-size: 20px;
-    width: 160px;
+    font-size: 22px;
     text-align: center;
-    padding: 8px;
-    border-bottom: 2px solid;
     overflow: hidden;
-    border-radius: 7px;      
+    border-radius: 7px; 
+    margin-left: 8%;  
+    margin-top: 3%;
 }
 .MenuH:hover{
-    background-color: #3cb1c0;
-    color: black;
-}
-
-table{
-    margin-top: 4%;
-    caption-side: bottom;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    box-shadow: 4px 9px 20px rgb(41, 38, 38);
-    border-top: 4px solid #017bab;
-}
-
-div{
-    width: 400px;
-	height: 30px;
-    text-align: center;
-    font-size: 28px;
-    background:#d6c6c6;
-    opacity: 0.7;
-    margin-top: 3%;
-    margin-left: 450px;
-    border-radius: 3px;
-}
-th{
     
-    background-color: #3cb1c0;
-    opacity: 0.9;
-    text-align: center;
-    border: 2px solid black;
-    padding-left: 85px;
-    padding-right: 85px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    font-size: 20px;
-}
-td{
-    border: 2px solid black;
-    padding-left: 85px;
-    padding-right: 85px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    background: #d6c6c6;
-    font-size: 16px; 
-}
-
-.Usep {
-    font-size: 22px;
-    color:black;
-    margin-bottom: 300px;
-    margin-left: 650px;
-    margin-top: 5.5%;
-    text-align: center;
-    font-size: 28px;
-    background:#d6c6c6;
-    opacity: 0.7;
-}
-
-.Use {
-    width: 200px;
-    height: 40px;
-    background:#d6c6c6;
-    margin-left: 40px;
-    margin-top: 4.5%;
+    color: rgb(15, 165, 202);
 }
