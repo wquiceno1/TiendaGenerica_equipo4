@@ -50,19 +50,21 @@ header{
 .MenuH:hover{
     
     color: rgb(15, 165, 202);
+    
 }
-.formulario1{
-    width: 1200px;
-	height: 200px;
-	margin-left: 5%;
-	margin-top: 5%;
+.formulario2 {
+    width: 1300px;
+	height: 730px;
+	margin-left: 2%;
+	margin-top: 100px;
 	box-shadow: 4px 9px 20px rgb(41, 38, 38);
     padding: 0px;
     border-top: 4px solid #017bab;
     color: black;
     background-color: rgb(21, 100, 94);
-    opacity: 0.9; 
+    opacity: 0.9;
 }
+
 form {
     margin-top: -4%;
     margin-left: 2%;
@@ -75,7 +77,10 @@ form {
     height: 40px;
     background: #d6c6c6;
     margin-top: 5px;
+    font-size: 22px;
+    color: black;
 }
+
 .button {
     width: 150px;
     height: 40px;
@@ -85,7 +90,7 @@ form {
     margin-left: 10px ;
     border-radius: 20px;
     border-bottom: 2px solid;
-    margin-top: 10%;
+    margin-top: 5%;
     box-shadow: 1px 3px 5px rgb(255, 253, 253);
     color:rgb(247, 236, 236);
     background: #1c3338;
@@ -95,21 +100,10 @@ form {
     background:  #3cb1c0;
     color: rgb(102, 48, 48);
 }
+ 
 
-.formulario2 {
-    width: 1300px;
-	height: 730px;
-	margin-left: 2%;
-	margin-top: 100px;
-	box-shadow: 4px 9px 20px rgb(41, 38, 38);
-    padding: 0px;
-    border-top: 4px solid #017bab;
-    color: black;
-    background-color: rgb(21, 100, 94);
-    opacity: 0.9; 
-}
 .codProd {
-    margin-top: 3%;
+    margin-top: 20%;
     margin-left: 10%;
     display: block;
     color:black;
@@ -120,10 +114,12 @@ form {
     width: 250px;
     height: 40px;
     background: #d6c6c6;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-left: 5%;
     padding-bottom: 20px;
     margin-bottom: 8px;
+    font-size: 18px;
+    color: #808080;
 }
 
 .w{
@@ -141,7 +137,7 @@ form {
     margin-left: 26%;
     border-radius: 20px;
     border-bottom: 2px solid;
-    margin-top: -13%;
+    margin-top: -14%;
     box-shadow: 1px 3px 5px rgb(255, 253, 253);
     color:rgb(247, 236, 236);
     background: #1c3338;
@@ -176,7 +172,7 @@ form {
 }
 .NombreP {
     margin-top: -20%;
-    margin-left: 44%;
+    margin-left: 43%;
     display: block;
     color:black;
     font-size: 22px;
@@ -188,9 +184,11 @@ form {
     background: #d6c6c6;
     margin-top: 2%;
     margin-left: 40%;
+    font-size: 18px;
+    color: #808080;
 }
 .NombreCant{
-    margin-top: -17%;
+    margin-top: -17.5%;
     margin-left: 63%;
     display: block;
     color:black;
@@ -204,6 +202,8 @@ form {
     background: #d6c6c6;
     margin-top: 2%;
     margin-left: 800px;
+    font-size: 18px;
+    color: #808080;
 
 }
 .NomProducto{
@@ -213,10 +213,12 @@ form {
     background: #d6c6c6;
     margin-top: 2%;
     margin-left: 800px;
+    font-size: 18px;
+    color: #808080;
 }
 .prodVenta {
     display: block;
-    margin-top: -17%;
+    margin-top: -17.5%;
     margin-left: 1020px;
     display: block;
     color:black;
@@ -229,6 +231,8 @@ form {
     background: #d6c6c6;
     margin-top: 2%;
     margin-left: 950px;
+    font-size: 18px;
+    color: #808080;
 }
 
 .NombreSon {
@@ -238,6 +242,8 @@ form {
     background: #d6c6c6;
     margin-top: 5%;
     margin-left: 950px;
+    font-size: 18px;
+    color: #808080;
 }
 
 
@@ -248,6 +254,8 @@ form {
     background: #d6c6c6;
     margin-top: 2%;
     margin-left: 950px;
+    font-size: 18px;
+    color: #808080;
 }
 .prodf {
     display: block;

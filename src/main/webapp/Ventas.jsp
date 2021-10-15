@@ -116,7 +116,6 @@
         <a href="Reportes.jsp" class="MenuH">Reportes</a>
     </nav>>
 
-    <fieldset> 
       <form class="formulario2" action="Ventas" method="post">       
         <div> 
             <label>Cédula:</label>
@@ -184,7 +183,6 @@
             <input class="buttons2" type="submit" name="confirmar" value="Confirmar">
         </div>
     </form>
-    </fieldset>
     
 </body>
 </html>
