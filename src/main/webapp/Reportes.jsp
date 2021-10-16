@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Reportes</title>
 <link rel='stylesheet'  href="CSS/StyleReportes.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
         <div>
             <a href="ReporteListaUsuarios.jsp"><input class="button" type="button" name="" value="Lista de Usuarios"></a>
             <a href="ReportesListaClientes.jsp"><input class="button" type="button" name="" value="Lista de Clientes"></a>
-            <input class="buttons" type="submit" name="" value="Venta por Cliente">
+            <a href="ReporteTotalVentas.jsp"><input class="button" type="button" name="" value="Venta por Cliente"></a>
         </div>
 
 </body>

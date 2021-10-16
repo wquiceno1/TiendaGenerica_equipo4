@@ -14,7 +14,6 @@ import Controlador.Conexion;
 import Modelo.ClienteDTO;
 
 
-
 public class VentaDAO{
 	
 	Conexion cn = new Conexion();
@@ -79,4 +78,44 @@ public class VentaDAO{
 		}
 		return codigo;
 	}
+	
+	// reporte
+	public ArrayList<ReporteVentaDTO> listarVentaCliente() {
+		
+		ReporteVentaDTO report = null;
+		ArrayList<ReporteVentaDTO> listar = new ArrayList<>();
+		
+		String sql = "SELECT cli.cedula_cliente, cli.nombre_cliente, SUM(ven.total_venta) "
+						+ "FROM ventas as ven "
+						+ "INNER JOIN clientes as cli "
+						+ "ON cli.cedula_cliente = ven.cedula_cliente "
+						+ "GROUP BY ven.cedula_cliente";
+		try {
+			
+			ps = conec.prepareStatement(sql);
+			res = ps.executeQuery();
+			
+			while(res.next()) {
+				report = new ReporteVentaDTO(res.getInt(1), res.getString(2), res.getInt(3));
+				listar.add(report);
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		return listar;
+	}
+
 }
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
